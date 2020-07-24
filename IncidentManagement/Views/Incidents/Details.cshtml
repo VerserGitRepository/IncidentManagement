@@ -1,0 +1,166 @@
+﻿@model IncidentManagement.Models.Incident
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<div>
+    <hr />
+
+    <table  class="table  table-condensed table-responsive ">
+        <tr>
+            <th> @Html.DisplayNameFor(model => model.INC)</th>
+            <th>@Html.DisplayNameFor(model => model.DateCreated)</th>
+            <th>@Html.DisplayNameFor(model => model.UserName)</th>
+            <th>@Html.DisplayNameFor(model => model.Location)</th>
+            <th>@Html.DisplayNameFor(model => model.FeedBackSource)</th>
+            <th>@Html.DisplayNameFor(model => model.Priority)</th>
+            <th>@Html.DisplayNameFor(model => model.TestDetails)</th>
+            <th>@Html.DisplayNameFor(model => model.Investigation)</th>
+            <th>@Html.DisplayNameFor(model => model.Status)</th>
+            <th>@Html.DisplayNameFor(model => model.DevNotes)</th>
+            <th>@Html.DisplayNameFor(model => model.Email)</th>
+            <th>File Download</th>
+            </tr>
+             <tr>
+            <td>@Html.DisplayFor(model => model.INC)</td>
+            <td>@Html.DisplayFor(model => model.DateCreated)</td>
+            <td>@Html.DisplayFor(model => model.UserName)</td>
+            <td>@Html.DisplayFor(model => model.Location)</td>
+            <td>@Html.DisplayFor(model => model.FeedBackSource)</td>
+            <td>@Html.DisplayFor(model => model.Priority)</td>
+            
+            <td>@Html.DisplayFor(model => model.TestDetails)</td>
+            
+            <td>@Html.DisplayFor(model => model.Status)</td>
+          
+            <td>@Html.DisplayFor(model => model.Investigation)</td>
+            <td>@Html.DisplayFor(model => model.DevNotes)</td>
+             <td>@Html.DisplayFor(model => model.Email)</td>
+            <td>
+                @Html.HiddenFor(model => model.FilePath)
+                @if (!string.IsNullOrEmpty(Model.FilePath))
+            {@Html.ActionLink("File Download", "Download", "Incidents", new { file = Model.FilePath }, null)}
+            </td>
+        </tr>
+
+           </table>         
+         
+</div>*@
+
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal table-condensed table-responsive table-bordered">
+        <dt> @Html.DisplayName("INC")</dt>
+        <dd>@Html.DisplayFor(model => model.INC)</dd>
+        
+        <hr />
+        
+        <dt>
+            @Html.DisplayName("Date")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateCreated)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayName("Request Type")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RequestType)
+        </dd>
+        <hr />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.FeedBackSource)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FeedBackSource)
+        </dd>
+        <hr />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Priority)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Priority)
+        </dd>
+        <hr />
+        <dt>@Html.DisplayName("Request Details")</dt>
+        <dd>@Html.DisplayFor(model => model.TestDetails)</dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.Investigation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Investigation)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.DevNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DevNotes)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <hr />
+
+        <dt>
+            @Html.DisplayName("File Download")
+        </dt>
+
+        <dd>
+              @Html.HiddenFor(model => model.FilePath)
+                @if (!string.IsNullOrEmpty(Model.FilePath))
+            {@Html.ActionLink("File Download", "Download", "Incidents", new { file = Model.FilePath }, null)}
+           
+        </dd>
+
+        
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.INC }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

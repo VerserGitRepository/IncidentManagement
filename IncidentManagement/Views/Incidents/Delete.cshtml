@@ -1,0 +1,145 @@
+﻿@model IncidentManagement.Models.Incident
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Incident</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.INC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Enviroment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Enviroment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestCategory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestCategory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateCreated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoftwareVersion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoftwareVersion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestCase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestCase)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FeedBackSource)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FeedBackSource)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Priority)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Priority)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestDetails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TesterNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TesterNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Investigation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Investigation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DevNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DevNotes)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

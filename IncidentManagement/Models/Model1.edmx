@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="IncidentManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Incident">
+          <Key>
+            <PropertyRef Name="INC" />
+          </Key>
+          <Property Name="INC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Enviroment" Type="varchar(max)" />
+          <Property Name="TestCategory" Type="varchar" MaxLength="50" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Location" Type="varchar" MaxLength="50" />
+          <Property Name="SoftwareVersion" Type="varchar" MaxLength="50" />
+          <Property Name="TestCase" Type="varchar(max)" />
+          <Property Name="FeedBackSource" Type="varchar(max)" />
+          <Property Name="Priority" Type="varchar" MaxLength="50" />
+          <Property Name="TestDetails" Type="varchar(max)" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="TesterNote" Type="varchar(max)" />
+          <Property Name="Investigation" Type="varchar(max)" />
+          <Property Name="DevNotes" Type="varchar(max)" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="FilePath" Type="varchar" MaxLength="500" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="RequestType" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Locations">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Location" Type="varchar" MaxLength="500" />
+          <Property Name="Location_INC_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="Priority">
+          <Key>
+            <PropertyRef Name="priority_ID" />
+          </Key>
+          <Property Name="priority_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Priority" Type="varchar" MaxLength="50" />
+          <Property Name="Prority_INC" Type="int" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="Status_ID" />
+          </Key>
+          <Property Name="Status_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="Status_INC" Type="int" />
+        </EntityType>
+        <Association Name="FK_Location_Location">
+          <End Role="Locations" Type="Self.Locations" Multiplicity="1" />
+          <End Role="Locations1" Type="Self.Locations" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Locations">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Locations1">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="IncidentManagementModelStoreContainer">
+          <EntitySet Name="Incident" EntityType="Self.Incident" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Locations" EntityType="Self.Locations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Priority" EntityType="Self.Priority" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Location_Location" Association="Self.FK_Location_Location">
+            <End Role="Locations" EntitySet="Locations" />
+            <End Role="Locations1" EntitySet="Locations" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IncidentManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Incident">
+          <Key>
+            <PropertyRef Name="INC" />
+          </Key>
+          <Property Name="INC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Enviroment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TestCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SoftwareVersion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TestCase" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FeedBackSource" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Priority" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TestDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TesterNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Investigation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DevNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="FilePath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RequestType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Location1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Location_INC_ID" Type="Int32" />
+          <NavigationProperty Name="Locations1" Relationship="Self.FK_Location_Location" FromRole="Locations" ToRole="Locations1" />
+          <NavigationProperty Name="Location2" Relationship="Self.FK_Location_Location" FromRole="Locations1" ToRole="Locations" />
+        </EntityType>
+        <EntityType Name="Priority">
+          <Key>
+            <PropertyRef Name="priority_ID" />
+          </Key>
+          <Property Name="priority_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Priority1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Prority_INC" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="Status_ID" />
+          </Key>
+          <Property Name="Status_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Status1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status_INC" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_Location_Location">
+          <End Role="Locations" Type="Self.Location" Multiplicity="1" />
+          <End Role="Locations1" Type="Self.Location" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Locations">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Locations1">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="IncidentManagementEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Incidents" EntityType="Self.Incident" />
+          <EntitySet Name="Locations" EntityType="Self.Location" />
+          <EntitySet Name="Priorities" EntityType="Self.Priority" />
+          <EntitySet Name="Status" EntityType="Self.Status" />
+          <AssociationSet Name="FK_Location_Location" Association="Self.FK_Location_Location">
+            <End Role="Locations" EntitySet="Locations" />
+            <End Role="Locations1" EntitySet="Locations" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IncidentManagementModelStoreContainer" CdmEntityContainer="IncidentManagementEntities">
+          <EntitySetMapping Name="Incidents">
+            <EntityTypeMapping TypeName="IncidentManagementModel.Incident">
+              <MappingFragment StoreEntitySet="Incident">
+                <ScalarProperty Name="RequestType" ColumnName="RequestType" />
+                <ScalarProperty Name="INC" ColumnName="INC" />
+                <ScalarProperty Name="Enviroment" ColumnName="Enviroment" />
+                <ScalarProperty Name="TestCategory" ColumnName="TestCategory" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="SoftwareVersion" ColumnName="SoftwareVersion" />
+                <ScalarProperty Name="TestCase" ColumnName="TestCase" />
+                <ScalarProperty Name="FeedBackSource" ColumnName="FeedBackSource" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="TestDetails" ColumnName="TestDetails" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="TesterNote" ColumnName="TesterNote" />
+                <ScalarProperty Name="Investigation" ColumnName="Investigation" />
+                <ScalarProperty Name="DevNotes" ColumnName="DevNotes" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Locations">
+            <EntityTypeMapping TypeName="IncidentManagementModel.Location">
+              <MappingFragment StoreEntitySet="Locations">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Location1" ColumnName="Location" />
+                <ScalarProperty Name="Location_INC_ID" ColumnName="Location_INC_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Priorities">
+            <EntityTypeMapping TypeName="IncidentManagementModel.Priority">
+              <MappingFragment StoreEntitySet="Priority">
+                <ScalarProperty Name="priority_ID" ColumnName="priority_ID" />
+                <ScalarProperty Name="Priority1" ColumnName="Priority" />
+                <ScalarProperty Name="Prority_INC" ColumnName="Prority_INC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="IncidentManagementModel.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="Status_ID" ColumnName="Status_ID" />
+                <ScalarProperty Name="Status1" ColumnName="Status" />
+                <ScalarProperty Name="Status_INC" ColumnName="Status_INC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

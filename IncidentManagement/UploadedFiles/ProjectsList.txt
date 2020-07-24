@@ -1,0 +1,38 @@
+( Ticket Managment)
+https://customers.verser.com.au/Incidentmanagement/   
+
+(online Documents)
+https://customers.verser.com.au/DocsOnline/default.aspx 
+
+(Onlinesales portal) 
+https://payments.verser.com.au/OnlineStore/verser/sales/VerserTech/MOBILE%20PHONE 
+
+(JMS web clinet)
+https://customers.verser.com.au/jms_web/client/ 
+
+(pricing sheet)
+https://customers.verser.com.au/PricingSheet/
+
+(online Load and Assets Management Portal)
+https://customers.verser.com.au/VerserMobileLoads
+
+(Online Store Adminstration)
+https://payments.verser.com.au/onlinestoredata/desktopclient/
+
+(BrennanIT)
+https://customers.verser.com.au/BrennanIT/desktopclient/
+
+(Brightstar)
+https://customers.verser.com.au/brightstar_uat/desktopclient
+
+(PriceEngine)
+https://customers.verser.com.au/PricingEngine/
+
+(verser Mobility Management)
+https://customers.verser.com.au/Verser/
+
+(Macquarie Portal)
+https://customers.verser.com.au/Macquarie/
+
+(JobManagement)
+https://customers.verser.com.au/JobManagement/

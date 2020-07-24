@@ -1,0 +1,408 @@
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated22] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	501	,'Production','warehouse',		2/03/2017		,'Kevin Siu','NSW ','','','','HIGH','"Pls amend the Load received date in system to (27/Feb 2017) for JMS156406
+Need to add a testing form for mobile phones as Kevin is stating cannot test - this is holding up the GRA"','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated22] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	502	,'Production','warehouse',		2/03/2017		,'Kevin Siu','NSW ','','','','HIGH','(SSN:13090642) pls manually overwrite make, model and serial no# using the follow information (make: IBM) (model: HS23) (s/n: 1S7875C7M06NZMX2)','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	503	,'Production','warehouse',		2/03/2017		,'Rhiannon Morrison','BRI','HIGH','','','HIGH','"Need to move the  below ssns OUT OF load JMS151350 and ADDED INTO load JMS156056 (NAB) 
+11917255
+11917254
+11917252
+11917253
+11917246
+11917230
+11917272
+11917265
+11917264
+11917263
+11917262
+11917266
+11917269
+11917271
+11917270
+11917268
+11917261
+11917267
+11917235
+11917233
+11917231
+11917232
+11917229
+11917228
+11917239
+11917240
+11917238
+11917237
+11917236
+11917234
+11917241
+11917242
+11917257
+11917258
+11917256
+11917245
+11917247
+11917251
+11917249
+11917250"','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	503	,'Production','warehouse',		2/03/2017		,'Kevin Siu','NSW ','','','','HIGH','any jobs has “asset Tag” recorded under the column “Barcode” in JMS template during the receiving process has started to disappear once the units has completed the test/data wipe (status: ready for GRA) example: ssn: 13090668, ssn:13090669','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	504	,'Production','warehouse',		3/03/2017		,'Rhiannon Morrison','NSW','','','','HIGH','MEF_UTS - JMS155629 - I cannot GRA as it wont let me update / price assets for the 2x servers each time I try I get an error- Error: Internal Server Error- this is 30 days post SLA can we please getsorted by 03/03/17','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	505	,'Production','warehouse',		3/03/2017		,'Rhiannon Morrison','VIC','','','','HIGH','"Eastern Reg Lib JMS155632 - Dev team to sort out the storage arrays - ""there is a form now, which allows us to condition test Storage Arrays, but we need the details from the Array updated by the dev team.
+
+If I condition test it now, it will come up as Ready for GRA without no details: Make/Model/Serial/HDD Capacity.
+
+See attachment of my request for the details to be added as per procedure for Storage Arrays."" as per email sent to Cormac from Sash 28/02/17"','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	506	,'Production','warehouse',		3/03/2017		,'Rhiannon Morrison','SYD','','','','HIGH','"The below SSN needs to be taken out of load JMS155460 MEF EOL Testing. And allocated in new load UON  JMS156786.  
+JMS156786 then needs to be set to unreleased in the load header and the individual SSN. The inventory needs to be changed to RTL for the SSN and UNallocated as MEF inventory 
+13125064 - Desktop - DKW3VG2"','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	507	,'Production','warehouse',		3/03/2017		,'Rhiannon Morrison','','','','','HIGH','Need to change load MEF EOL Testing - JMS155703 to MER EOL Testing. WO : 073675 Project: MER Inventory: MER.. Ensure all SSNs are changed to MER in Inventory and MER EOL Testing for project','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	508	,'Production','warehouse',		3/03/2017		,'Rhiannon Morrison','','HIGH','Need to change load MEF EOL Testing - JMS154921 to MER EOL Testing. WO : 073026 Project: MER Inventory: MER.. Ensure all SSNs are changed to MER in Inventory and MER EOL Testing for project','open ','HIGH','Need to change load MER EOL Testing - JMS156706 to MER EOL Testing. WO : 073675 Project: MER Inventory: MER.. Ensure all SSNs are changed to MER in Inventory and MER EOL Testing for project','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	509	,'Production','warehouse',		8/03/2017		,'Rhiannon Morrison','SYD','HIGH','"The below SSN's need to be taken out of load JMS155460 MEF EOL Testing. And allocated in new load UON  JMS156786.  
+JMS156786 then needs to be set to unreleased in the load header and the individual SSNS. The inventory needs to be changed to RTL for each SSN and unallocated as MEF inventory 
+13125064 - Desktop - DKW3VG2
+13125119 - Desktop - GTY4VG2"','open ','HIGH','"The below SSN's need to be taken out of load JMS155700 - Assisi. And allocated in new load Assisi JMS156909 (RTL load)  
+JMS156909 then needs to be set to unreleased in the load header and the individual SSNS. The inventory needs to be changed to RTL for each SSN and unallocated as MER inventory 
+11921231 - Monitor
+11921232 - Television
+11921234 - Misc
+11921235 - Misc "','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	510	,'Production','warehouse',		9/03/2017		,'Rhiannon Morrison','SYD','HIGH','','','HIGH','Cannot GRA MER EOL Testing JMS156706 as its claiiming the lease customer belongs to a different inventory . The lease customer in question has assets leased through both MER and MEF so this rule needs to be turned off so I can GRA before it breaches SLA','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	572	,'Production','Finance',		19/04/2017		,'Carmen Tam','HO','','','','Medium','From Dashboard: Purchase Orders; Purchase order 72402B is no longer linking to job (Detail level - PO lines missing)','Open')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	512	,'Production','warehouse',		10/03/2017		,'Kevin Siu','NSW ','','','','HIGH','server array that previously requested for manual update on model, make and serial no# still not yet reflect the correct details, the SSN now also come up with the alphabet “A” at the end of the numbers, system shows “server error” evertime when you do look up on the SSN: 13125639 (previous INC 487)','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	513	,'Production','warehouse',		14/03/2017		,'Rhiannon Morrison','NSW','','','','HIGH','Need to move SSN 13009957 & 13009940 from load MER EOL Testing - JMS155703 to MEF EOL Testing load JMS156999, need to ensure project inventory is set to MEF, Project to MEF EOL Testing & status changed to UNRELEASED','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	573	,'Production','Warehouse ',		19/04/2017		,'Daniel Necovski ','National ','','','','High','issue / error message appears when trying to add assets to the subject despatch order - the order number can be created with no problem but the error " There was a problem performing the current operation - Object reference not set to an instance of an object " appears ','Open')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	515	,'Production','warehouse',		15/03/2017		,'Rhiannon Morrison','BRIS','','','','HIGH','Can you please change load JMS155635 (MEF EOL Testing) to an RTL inventory load, project: The Presbyterian & Methodist Schools, Inventory: RTL, ALL SSNS to also be changed to RTL inventory. Allocate to WO # ','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	516	,'Production','warehouse',		17/03/2017		,'Kevin Siu','NSW','HIGH','','','HIGH','Mobile phone cannot perform conditon test in system after data wipe, pls advise. (SSN: 13103492)','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	517	,'Production','warehouse',		17/03/2017		,'Daniel Necovski ','VIC ','','','','HIGH','Please delete SSN 13107033 from load JMS157050, the asset was received into the system although found to be a quarantine asset that will will received in a separate load.','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	518	,'Production','warehouse',		20/03/2017		,'Rhiannon Morrison','BRIS','HIGH','Can you please change load JMS155635 (MEF EOL Testing) to an RTL inventory load, project: The Presbyterian & Methodist Schools, Inventory: RTL, ALL SSNS to also be changed to RTL inventory. Allocate to WO # ','open ','HIGH','Need to move ALL SSNs from load JMS155635 across to JMS157061 - P&M Sch Associa. Need to set ALL SSNS to RTL inventory and project to P&M Sch Associa. Also change load status to unreleased','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	519	,'Production','warehouse',		20/03/2017		,'Rhiannon Morrison','SYD','HIGH','','','HIGH','JMS150406- UON needs it inventory changed to VERSER and the project changed to UON. Need to remove the inventory of MEF ','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	520	,'Production','warehouse',		20/03/2017		,'Daniel Necovski ','ACT ','','','','HIGH','Please investigate email sent form Daniel Necovski to Basan & Thomas on the 20/3/2017 @ approx 10:30 am - ISSUE - SSICT Canberra stock with inventory RE USE inventory needs to go through normal testing process then flick to "avaliable" status rather than " "released" . This will allow Canberra team to reallocate the assets to a job raised by the client. ','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	574	,'Production','Project management  ',		19/04/2017		,'Riz','ACT','','','','High','Need job details form WMS on following SSNs - 2035557, 2035684, 11850241, 2186978','Open')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	522	,'Production','Project management  ',		21/03/2017		,'Daniel Necovski / Rizwan Rimshard','ACT ','','','','HIGH','Can we please have a report created ? We have a requirement to be able to generate reports based on buffer stock received at the warehouse in a given date range and provide to the client on a regular basis Important fields in this report includes, date received, PO and item type - This will only apply to ACT SSICT stock ','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	523	,'Production','Project management  ',		21/03/2017		,'Zaffer Mannan / Sash Atanasovski ','VIC ','','','','HIGH','KPMG storage array details need to be updated as per spreadsheet sent to Basan and Thomas V on the 21/03/2017 @ 12:50 pm ','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	522	,'Production','warehouse',		20/03/2017		,'Daniel Necovski ','QLD ','','','','HIGH','"Please veiw the below assets - these assets are in the Brisbane warehouse and SSN's have been transferred from WMS to JMS a while ago, the assets bring up an error in JMS when looked up                                    10262924
+10263452
+10263143
+10262959
+10262813
+10263104
+10263403
+10263012
+"','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	525	,'Production','warehouse',		23/03/2017		,'Kevin Siu','NSW','','','','HIGH','Pls update correct serial no# 8MYMG2S for SSN: 13038544','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	526	,'Production','warehouse',		23/03/2017		,'Kevin Siu','NSW','','','','HIGH','can you please update the mode & serial no# for SSN: 13104004 (model: FCLSE0801) (serial no#: 2S6041C158)','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	527	,'Production','warehouse',		24/03/2017		,'Kevin Siu','NSW','','','','HIGH','Pls update this correct serial no# (32982434453) to the SSN: (13101940) Thx','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	528	,'Production','warehouse',		24/03/2017		,'Kevin Siu','NSW','','','','HIGH','Pls delete following loads as there are no qty in the load (JMS156980, JMS156965, JMS156968, JMS156956, JMS156958, JMS156959, JMS156966)','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	529	,'Production','warehouse',		27/03/2017		,'Kevin Siu','NSW','','','','HIGH','can you please update the mode & serial no# for SSN: 13104003 (model: ReadyNas 3100) (serial no#: 2CD619Y700058)','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	530	,'Production','warehouse',		27/03/2017		,'Rhiannon Morrison','NSW','','','','HIGH','Still unable to GRA load JMS156706 - claiming the lessor is part of another inventory and then stops GRA being able to be completed - outside of SLA and needs to be sorted asap please ','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	531	,'Production','warehouse',		27/03/2017		,'Sash A ','VIC ','','','','HIGH','"Please update the storage array details below SSN: 13032810
+Brand: EMC2
+Model: KTN-STL3
+Serial: AC794121205901
+
+SSN: 13032815
+Brand: EMC2
+Model: KTN-STL3
+Serial: FCNVS121200399
+
+SSN: 13032814
+Brand: EMC2
+Model: KTN-STL3
+Serial: FCNVS115100130
+
+SSN: 13032824
+Brand: EMC2
+Model: STPE15
+Serial: FCNCH121200197
+
+SSN: 13032811
+Brand: EMC2
+Model: KTN-STL3
+Serial: FCNVS133300063
+SSN: 13032813
+Brand: EMC2
+Model: KTN-STL3
+Serial: AC794120914210
+
+SSN: 13032812
+Brand: EMC2
+Model: KTN-STL3
+Serial: AC794121005798
+"','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	353	,'Feedback','Finance',		4/01/2017		,'Carmen Tam','National ','JMS/SQL','N/A','Finance','MEDIUM ','When SQL report is ran for inventory type MEF_NZ SSN what have been sold on order during Nov 2015, is missing from the report (They are SSN: 12180282, 12180281, 12180280) (SLQ Report link: http://dc-sqldev/Reports/Pages/Report.aspx?ItemPath=%2fProject+Reports%2fMEF+EOL+Testing%2fJMS%2fJMSAssetsSold)','open ')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	533	,'Production','warehouse',		28/03/2017		,'Rhiannon Morrison','National ','','','','HIGH','Cannot GRA JMS156098 MER EOL Testing as the load header status is set to RECEIVED but all SSNS are READY FOR GRA ','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	534	,'Production','warehouse',		29/03/2017		,'Rhiannon Morrison','National ','','','','HIGH','JMS156999 - MEF EOL Testing, the load header status needs to be changed to UNRELEASED please ','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	535	,'Production','warehouse',		29/03/2017		,'Sash','National ','','','','HIGH','"Please update the Storage Array details:SSN: 13032814
+Brand: IBM
+Model: Chassis C1
+Serial: SX31101103"','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	536	,'Production','warehouse',		29/03/2017		,'Sash','VIC ','','','','HIGH','"Please update Storage Array details: 
+SSN: 13032805
+Brand: Netapp
+Model: NAJ-1001
+Serial: 6000210083
+
+
+SSN: 13032806
+Brand: Netapp
+Model: NAJ-1001
+Serial: 6000210019
+"','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	537	,'Production','warehouse',		29/03/2017		,'Daniel / Leah ','ACT ','','','','HIGH','"Please delete JMS157130  and SSN 12091137
+12091138 - the load and SSN's were duplicated against 1 work order ."','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	538	,'Production','warehouse',		29/03/2017		,'Kevin Siu','NSW','','','','HIGH','Can you pls update the serial no# for the following SSN:13100301 (s/n# 2HPLXVV1), SSN: 13100212 (s/n# CBTRHV1)','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	439	,'Production','warehouse',		23/01/2017		,'Elton De Guzman','NSW','Inventory Control 2 V1.0.0.0','NA','N/a ','LOW','Need A  ADMIN sync tool to eliminate data from JMS so new data from Blancco server can be freshes','open ')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	540	,'','warehouse',		31/03/2017		,'Sash','VIC','','','','HIGH','"Please update the storage array details below SSN: 13033358
+Brand: Dell
+Model: EqualLogic PS4100
+Serial: BG97F2S"','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	541	,'','warehouse',		31/03/2017		,'Kevin Siu','NSW','','','','HIGH','pls update serial no# (3576NW1) to SSN: 13104245','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	542	,'','warehouse',		4/04/2017		,'Sash','VIC','HIGH','"Please update the storage array details below SSN: 13033358
+Brand: Dell
+Model: EqualLogic PS4100
+Serial: BG97F2S"','open','HIGH','"Need to ammend duplicate serials below are the correct serials for the ssns in load JMS157086 - MEF EOL Testing
+
+13011005 NOTEBOOK PC LENOVO - PF00B23V
+13010868 NOTEBOOK PC LENOVO - PF00B1FN
+13010924 NOTEBOOK PC LENOVO-  PF00B110
+13010963 NOTEBOOK PC LENOVO - PF00B1FT
+"','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	543	,'','warehouse',		4/04/2017		,'Kevin','NSW','HIGH','"Need to ammend duplicate serials below are the correct serials for the ssns in load JMS157086 - MEF EOL Testing
+
+13011005 NOTEBOOK PC LENOVO - PF00B23V
+13010868 NOTEBOOK PC LENOVO - PF00B1FN
+13010924 NOTEBOOK PC LENOVO-  PF00B110
+13010963 NOTEBOOK PC LENOVO - PF00B1FT
+"','open','HIGH','"Need to ammend duplicate serials below are the correct serials for the ssns in load JMS157150 - MEF EOL Testing
+
+
+13104211 - B576NW1
+13104245 -3576NW1
+
+"','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	544	,'Production','warehouse',		5/04/2017		,'Alisa','NSW','','','','High','Move SSN 13104007 from JMS load  157066 to JMS load 157271 and change status from verser to RTL','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	545	,'Production','warehouse',		5/04/2017		,'Alisa','NSW','','','','High','Test cannot be completed to test mobile phone because there is no mobile phone conditional test form, cannot GRA load, need to GRA load ASAP!','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	546	,'Production','warehouse',		5/04/2017		,'Rhiannon Morrison','VIC','','','','High','"Need to create new locations for the new WA warehouse
+ITSIT - Receiving 
+TB-ITSIT - Test bench
+ST-ITSIT - Storage"','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	547	,'Production','warehouse',		5/04/2017		,'Gary','ACT','','','','High','Please update assets details below:                                                                                   SSN: 13130569 Make: Hewlett Packard Model: Mini 5102 Serial No: CNU0304NTD                                                                                                                               SSN: 13130563 Make: Hewlett Packard Model: Mini 5102 Serial No: CNU0304P8R                SSN: 13130546 Make: Hewlett Packard Model: Mini 5102 Serial No: CNU0304PXJ  ','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	549	,'Production','warehouse',		5/04/2017		,'Daniel Necovski ','Natioanl ','','','','High','Please look to allocate the appropriate test form to ITEM TYPE iPAD, after investigation the Test form used for ITEM TYPE " Tablet " will be a good match and allow testers to test assets against their correct ITEM TYPE ','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	550	,'Production','warehouse',		5/04/2017		,'Rhiannon','SYD','','','','High','Need to move SSN 13125064 out of load JMS156786 and add it into new load JMS157319 (MEF EOL Testing). The inventory of this SSN must be changed to MEF inventory and MEF EOL Testing as the project. Load to then be changed to UNRELEASED','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	560	,'Production','warehouse',		6/04/2017		,'Dev ','VIC','','','','High','"WO orders are missing from GRA SQL report. Link: http://dc-sqldev/Reports/Pages/Report.aspx?ItemPath=%2fGRA+REPORTS%2fJMS+GRA+Reports%2fCGRA+PROD 
+When a load is created warehouse always allocate the load to WO. Therefore, when we search in JMS by load we can see WO. But when we run the GRA report for client then WO are missing. 
+E.g: 
+"','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	562	,'Production','warehouse',		6/04/2017		,'Alisa','NSW','','','','High','Please change all inventory in load JMS155908 from Verser to Sipi - Sipi Owned Assets. Otherwise assets cannot be sold. Load has already been GRA'd and released incorrectly.','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	563	,'Production','warehouse',		6/04/2017		,'Alisa','NSW','','','','High','Please change load JMS157089 from Verser to Sipi - Sipi Owned Assets before we can GRA.','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	477	,'Production','Finance',		8/02/2017		,'Carmen Tam','HO','','','','LOW','Requesting the JMS PO export (for asset purchases) to have a purchase date of the date approved.  Currently PO date is recognised at the date PO is requested for approval','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	565	,'','warehouse',		7/04/2017		,'Gary','ACT','','','','High ','Please update Storage Array details below:                                                                                   SSN:12091365 Make: Hewlett Packard Model: AJ941-63002 Serial No: LAYPT0DU82D00U   SSN:12091343 Make: Hewlett Packard Model: AJ941-63002 Serial No: LAYPT0DU81W0EK    SSN:12091342 Make: Hewlett Packard Model: AJ941-63002 Serial No: LAYPT0DU81W08S    SSN:12091357 Make: Hewlett Packard Model: AJ941-63002 Serial No: LAYPT0DU81X00C     SSN:12091358 Make: Hewlett Packard Model: AJ941-63002 Serial No: LAYPT0DU81W0HO                                                             ','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	566	,'Production','Project management  ',		7/04/2017		,'Riz','ACT','','','','High ','SSICT stock on hand report to include "Job number " field','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	567	,'Production','Project management  ',		11/04/2017		,'Dev','VIC','High ','assets allocated for a job in JMS not visible under SSICT log in ( JMS ). real time testing was conducted by Riz from SSICT office via local network, the issues seems to be role permission not silverlight or any other depended plug-in developer to investigate further and resolve issue asap. ','Open','High','"Load: JMS157350
+please fix the CPU for SSN 12182687 from Core i5 to Core 2 Duo. "','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	568	,'Production','Project management  ',		11/04/2017		,'Daniel ','ACT ','','','','High','Please delete SSN 12091138 & 12091137 from load JMS157136 - ACT team have advised the 2 SSN's were not required and were scanned in accidently. ','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	569	,'Production','Project management  ',		12/04/2017		,'Riz','ACT ','','','','High','"* Please update all records which has Brand = Hewlett Packard and HP to Hewlett Packard only in SSICT stock on hand report 
+* Item type missing from newly designed SOH report
+* current assets sitting under re-use inventory with ""Released"" status needs to be changed to ""available"""','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	570	,'Production','warehouse',		13/04/2017		,'Zaffer','VIC','','','','Medium','"* Please delete the below loads in JMS.  Talking to warehouse team, these would have got created due to some error while creating loads.
+JMS155909
+JMS155910
+JMS155911
+JMS157137
+
+"','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	570	,'Production','Project management  ',		18/04/2017		,'Riz','ACT','','','','Medium','"Project : SSICT Canberra 
+* Please change following asset status to released and load status to complete - Load # JMS155558 SSN - 12054350, 12054349, 12054351, 12113087
+* JMS150274 load  has 30 assets but only 5 able to retrieve, below error come up when processing   "','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	571	,'Production','Finance',		18/04/2017		,'Carmen Tam','HO','','','','Medium','When running JMSAssetsSold report (http://dc-sqldev/Reports/Pages/Report.aspx?ItemPath=%2fProject+Reports%2fMEF+EOL+Testing%2fJMS%2fAssetsTestedReport) error message returns (An error has occurred during report processing, cannot create a connection to data sources 'JMS' Cannot open database 'JMS' requested by the login. The login failed. Login failed for user 'sa')','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	478	,'Production','Finance',		8/02/2017		,'Carmen Tam','HO','','','','LOW','Requesting for net invoices, the service invoice is able to be exported and not contingent on the PO being issued','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	514	,'Production','warehouse',		15/03/2017		,'Daniel Necovski ','ACT ','','','','HIGH','Can you please investigate Work Order 073836  , the work order had assets allocated against it and has also had a CAF signed - JMS is not showing the details of the assets when the W/O is looked up - I have sent an email to Thomas and Basan ','open ')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	521	,'Production','warehouse',		20/03/2017		,'Daniel Necovski ','ACT ','','','','HIGH','As per email sent to Basan / Thomas on the 20/03/2017 @ 12.20 pm - SSICT canberra stock has  37 assets that appear as " PROJECT APPLE MACINTOSH " inventory. The assets need to be changed to SSICT Buffer stock inventory, The project manager and warehouse are unaware of what the Apple macintosh inv is ? Can we please have the list of assets sent in my email changed to " SSICT Buffer Stock".','open ')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	575	,'','Warehouse',		19/04/2017		,'Gary','ACT','','','','Medium','"Hi, please update Make, Model and Serial No for the list below as Blancco cannot capture them. Details such as CPU, CPU speed, disk size and memory are all recorded by JMS.                                                                                                                                        Load Number: JMS157398                                                                                                        
+    SSN       Item Type                  Make                 Model         Serial No
+13130712  NOTEBOOK PC   Hewlett-Packard   Mini 5102   CNU0411QKD
+13130708  NOTEBOOK PC   Hewlett-Packard   Mini 5102   CNU0411WX9
+13130726  NOTEBOOK PC   Hewlett Packard   Mini 5102   CNU0411VD5
+13130725  NOTEBOOK PC   Hewlett Packard   Mini 5102   CNU0412GQ7
+13130707  NOTEBOOK PC   Hewlett Packard   Mini 5102   CNU0411VZ0
+13130746  NOTEBOOK PC   Hewlett Packard   Mini 5102   CNU041201V
+13130789  NOTEBOOK PC   Hewlett Packard   Mini 5102   CNU0412GY5
+13130751  NOTEBOOK PC   Hewlett Packard   Mini 5102   CNU041204M
+13130785  NOTEBOOK PC   Hewlett Packard   Mini 5102   CNU04120M3
+13130755  NOTEBOOK PC   Hewlett Packard   Mini 5102   CNU0411VDP
+13130756  NOTEBOOK PC   Hewlett Packard   Mini 5102   CNU0411ZF9
+13130752  NOTEBOOK PC   Hewlett Packard   Mini 5102   CNU0411ZDC
+13130753  NOTEBOOK PC   Hewlett Packard   Mini 5102   CNU04120WS
+13130721  NOTEBOOK PC   Hewlett Packard   Mini 5102   CNU0411T61
+13130720  NOTEBOOK PC   Hewlett Packard   Mini 5102   CNU0412199
+13130719  NOTEBOOK PC   Hewlett Packard   Mini 5102   CNU0411T90
+13130724  NOTEBOOK PC   Hewlett Packard   Mini 5102   CNU0411ZK7
+13130709  NOTEBOOK PC   Hewlett Packard   Mini 5102   CNU0411W1K
+13130711  NOTEBOOK PC   Hewlett Packard   Mini 5102   CNU0411X2B
+13130710  NOTEBOOK PC   Hewlett Packard   Mini 5102   CNU0411X8T
+
+"','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	576	,'Production','Project management  ',		20/04/2017		,'Rhi','Melb ','','','','Medium','Please delete load JMS157466 (MER EOL Testiing) its an empty load','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	577	,'Production','Warehouse',		20/04/2017		,'Sash','Melb ','','','','High','"Hi, please update below details for Storage Arrays.                                                                                                 
+    SSN                 Make                 Model                       Serial No
+13033709             IBM              EXPM2512                11090600033B
+13033708             IBM              EXPM2512                11090600047B
+13013277              Dell               Equallogic PS6110  HZB5F2S
+13013280              Dell               Equallogic PS6110  GZB5F2S
+
+"','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	577	,'Production','Warehouse ',		20/04/2017		,'Sash','Melb ','','','','High','"please update the below Storage Arrays
+SSN: 13013277  Make: Dell    Model:  Equallogic PS6110   Serial: HZB5F2S
+SSN: 13013280  Make: Dell    Model:  Equallogic PS6110   Serial: GZB5F2S
+SSN: 13033709  Make: IBM    Model:  EXPM2512   Serial: 130119W
+SSN: 13033708  Make: IBM    Model:  EXPM2512   Serial: 1301198
+"','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	574	,'Production','Warehouse ',		20/04/2017		,'Kevin Siu','NSW','','','','High','please remove SSN: 13021673 from system as it was double book in system where the asset already has an SSN assign to it','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	575	,'Production','Project management  ',		20/04/2017		,'Riz','ACT','','','','High','"Project : SSICT Canberra 
+move following SSNs to load# JMS157458
+12052054 12052026 12052027 12052056 12086285 12086286 12086288 12086284 12085528 12085527, change inventory to - Project Re-Use and individual asset status to ""available"" "','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	577	,'Production','Warehouse ',		20/04/2017		,'Sash','VIC','High','','','High','"Please update Storage Array details as per below:
+
+SSN:13013274
+Make: Dell
+Model: Equallogic PS6110
+Serial: DZB5F2S
+
+SSN:13013278
+Make: Dell
+Model: Equallogic PS6110
+Serial: FZB5F2S"','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	578	,'Production','Warehouse ',		21/04/2017		,'Sash','VIC','','','','High','"Please update Storage Array details as per below:
+
+SSN:13013273
+Make: Dell
+Model: Equallogic PS6110
+Serial: 7HQ5F2S
+
+SSN:13013279
+Make: Dell
+Model: PowerVault MD1200
+Serial: JC95F2S"','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	579	,'Production','Project management  ',		26/04/2017		,'Andy ','NSW','','','','High','"JMS157089 - below assets will need to change buy price to $0 as they are consignment sales.
+
+13033204
+13011433
+13011422
+13011420
+13011423
+13011424
+13011425
+13011426
+13011427
+13011431
+13011430
+13011429
+13011428
+13011441"','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	580	,'','',		26/04/2017		,'Alisa','NSW','','','','LOW','Job # 073301 - 22/02 JMS155994 load was created incorrectly and was to be deleted by Tvas. New load was created by SYD warehouse. 24/02 New Load was created JMS156061 however Load JMS155994 was not deleted, can that load be deleted thanks.','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	581	,'Production','Project management  ',		26/04/2017		,'Riz','ACT','','','','High ','"Project - SSICT
+Please change all assets with assets status = ""Released"" to ""Available"" under - PROJECT RE-USE inventory. this is a long outstanding work which is currently creating issues on allocation assets to job also not appearing on daily SOH report. please treat this as proprity 
+latest SOH report on re-use stock can be found via below link 
+G:\Operations\Warehouse Ops\Canberra\SSICT REUSE
+
+2. Post GRA for assets in -RE-USE inventory asset status changing script not functioning. test conducted "','Open')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	582	,'Production','Warehouse ',		27/04/2017		,'Kevin Siu','NSW','','','','High','Can you pls update the serial no# and Model for SSN: 13039040 (serial no# 915DR42, Model: PowerEdge R730','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	583	,'Production','Project management  ',		28/04/2017		,'Alisa','NSW','','','','LOW','Can you pls close off Loads # 151553 RBA, 151572 RBA, 152493 HSBC. These loads are from last year and assigned to me, I noticed 2 are RTL and the other July stock not received.','Open')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	584	,'Production','Warehouse ',		1/05/2017		,'Daniel ','NSW','High','','','High ','"All below SSN's will not sync, Error appears advising that Report already exists - Vic testing teams waited for a few hours and continued to hit sync button to ensure it wasnt lag although tests have not completed.                                                                         13112447
+13111949
+13111944
+13111999
+13111796
+13112667
+13111801
+13112050
+13112089
+13112586
+13116780
+13112443
+13112361
+13112363
+13110865
+"','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	585	,'','Warehouse ',		1/05/2017		,'Gary','ACT','','','','LOW','"Please update Make, Model and Serial number for the asset below. 
+Blancco cannot caputre those details.
+SSN: 13131213  
+Make: Hewlett-Packard   
+Model: HP Mini 5102  
+Serial No: CNU041211F"','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	586	,'Production','Project management  ',		1/05/2017		,'Riz','ACT','','','','Medium','"Daily stock on hand report tweak - SSICT
+* latest automated daily SOH has over 1800 assets without a project inventory type. When checked in receiving template, asset has a inventory type attached. Please fix this asap 
+* over 250 records without model numbers
+* PO number filed values to update with ""CS"" in front the numarical value and ""REQxxxx"" to be deleted "','Open ')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	587	,'Production','Warehouse ',		2/05/2017		,'Sash','VIC','','','','High','"Assets are not changing status to ""Pending Condition Testing""
+Blancco report exists for each - Synced successfuly
+Current Status ""Pending Blancco Test""
+Inventory is RTL, needs to be changed to Verser as these were orginally part of the Quanarntine list for DET.
+
+Project: DET
+Load: JMS155584"','Open ')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	588	,'Production','Project management  ',		2/05/2017		,'Riz','VIC','','','','Medium','"please delete below emplty loads 
+Project : MGSA ARS load # JMS155820
+Project SSICT load # JMS157173, JMS156004
+
+change load status to ""complete"" as well as all assets from ""unreleased"" to ""released""
+Project : SSICT_SchoolCL
+load # JMS150580, JMS150588, JMS150650, JMS150655, JMS150806, JMS150866
+Project : MGSA ARS load #JMS153366
+load # change load status to complete as well as all assets from ""unreleased"" to ""released""
+"','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	589	,'Production','Project management  ',		2/05/2017		,'Dev ','VIC','Medium','"Project : MGSA ARS 
+load # JMS155820
+please delete this load"','Open ','Medium','"Poject: DET
+Load # JMS156549, JMS156807, JMS156813, JMS157060
+Please delete these loads since these empty loads no SSNs and created by mistake"','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	590	,'Production','Project management  ',		2/05/2017		,'Dev ','VIC','Medium','"Poject: DET
+Load # JMS156549, JMS156807, JMS156813, JMS157060
+Please delete these loads since these empty loads no SSNs and created by mistake"','Open ','High','"
+Project: MEF EOL TESTING
+Load # JMS157440 should have MEF inventory instead of MER
+Please remove load from WO: 074330 and attach to WO: 074327
+After attaching to right WO & project please change project MER EOL Testing to MEF EOL Testing in load
+Change Inventory MER to MEF
+New Load: JMS157590
+
+Could not adjust the qty in pervious wo since loads chnage has occured since system gives an error related to object and unable to close it."','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	591	,'Production','Warehouse ',		2/05/2017		,'Sash','VIC','High','"Assets are not changing status to ""Pending Condition Testing""
+Blancco report exists for each - Synced successfuly
+Current Status ""Pending Blancco Test""
+Inventory is RTL, needs to be changed to Verser as these were orginally part of the Quanarntine list for DET.
+
+Project: DET
+Load: JMS155584"','Open ','High','"Storage Arrays to be updated as per below details:
+
+SSN: 13034051
+Make: Hewlett Packard
+Model: FCLSE-0701
+Serial: DSA900413
+
+SSN: 13034050
+Make: Hewlett Packard
+Model: AW597B
+Serial: 2S6345C251"','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	592	,'Production','Warehouse ',		3/05/2017		,'Sash','VIC','','','','High','Please delete SSN: 1W114309 - Invalid entry.','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	593	,'Production','Project management  ',		3/05/2017		,'Zaffer','VIC','','','','Medium','"PM used to be able to generate below certificate using the below link: 
+http://dc-sqldev/Reports/Pages/Folder.aspx?ItemPath=%2fCertificates
+3  x Pass Data Destruction Certificate
+7 x pass Data Destruction Certificate
+Data Destruction certificate
+Recycling Certificate 
+
+This has stopped working since migration from WMS few months ago.
+Can you please investigate if this can be fixed? "','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	594	,'Production','Project management  ',		3/05/2017		,'Zaffer','VIC','','','','High','"It appears like for some reason GRA report buyback price is not matching with the buyback figures as showing on JMS. 
+
+Attached are the assets that have been blanked out. Does this mean we will need to reprice these assets?  Alternative if you can see prices at the backend, are you able to update them accordingly? 
+Refer to email dated 03/05 05:30PM
+"','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	595	,'Production','Warehouse ',		4/05/2017		,'Kevin Siu','NSW','','','','High','Can you pls update the serial no# and Model for SSN: 13039171 (serial no# 615DR42, Model: PowerEdge R730)','Closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	596	,'Production','Project management  ',		5/05/2017		,'Dev ','NSW','High','Can you pls update the serial no# and Model for SSN: 13039171 (serial no# 615DR42, Model: PowerEdge R730)','','High','Trying to create load for WA warehouse Perth ITSIT but location has not been created. ','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	597	,'Production','Finance',		4/05/2017		,'Carmen Tam','NSW','','','','MEDIUM ','When exporting out purchase order 74421B and 73567B, the values come out as blank (it may be possible the purchase is missing line details within the PO!)','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	598	,'Production','Project management  ',		5/05/2017		,'Dev ','VIC','MEDIUM ','When exporting out purchase order 74421B and 73567B, the values come out as blank (it may be possible the purchase is missing line details within the PO!)','','Medium','"Please delete Load JMS157599 and created by mistake
+WO: 074805
+Project MEF EOL testing
+"','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	599	,'','',		5/05/2017		,'Alisa','NSW','','','','Medium','Please change Inventory for JMS157604 & JMS157607 to Sipi - Sipi Owned Assets Leased','closed')
+INSERT INTO [dbo].[Incident] ([INC] ,[Enviroment],[TestCategory] ,[DateCreated2] ,[UserName],[Location] ,[SoftwareVersion] ,[TestCase] ,[FeedBackSource],[Priority] ,[TestDetails] ,[Status] ) VALUES(	599	,'Production','Project management  ',		10/05/2017		,'Riz ','ACT','','','','Medium','"Project - SSICT
+issue - job unable to set to Ready to Invoice - error "" object reference not set to an instance of an object"""','Open ')

@@ -1,0 +1,311 @@
+﻿@model IEnumerable<IncidentManagement.Models.Incident>
+
+@using System.Linq;
+@using System.Data.Entity;
+@{
+    ViewBag.Title = "Incident Management";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="@Url.Content("https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css")" rel="stylesheet" type="text/css" />
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" type="text/javascript"></script>
+@*<link href="Content/bootstrap.min.css" rel="stylesheet" />
+<script src="Scripts/jquery-1.10.2.min.js"></script>
+<script src="Scripts/bootstrap.min.js"></script>*@
+
+<table class="table table-responsive">
+    <tr>
+        @using (Html.BeginForm("Index", "Incidents", FormMethod.Post))
+        {
+            <th style="padding:10px;padding-right:10px;" width="180px">
+
+                @Html.DropDownList("ticketprtyId", new List<SelectListItem>()
+               {
+             new SelectListItem() { Text = "LOW", Value = "LOW"},
+             new SelectListItem() { Text = "MEDIUM", Value = "MEDIUM" },
+             new SelectListItem() { Text = "HIGH", Value = "HIGH" },
+             new SelectListItem() { Text = "CRITICAL", Value = "CRITICAL" }
+      }, "Ticket Priorities", htmlAttributes: new { @class = "form-control", Styles = "width:200px" })
+            </th>
+            <th style="padding:10px;padding-right:10px;" width="200px">
+                @Html.DropDownList("ticketstatusId", new List<SelectListItem>()
+    {
+    new SelectListItem { Text = "OPEN", Value = "OPEN" },
+    new SelectListItem { Text = "PENDING", Value = "PENDING" },
+    new SelectListItem { Text = "CLOSED", Value = "CLOSED" } }, "Ticket Status", htmlAttributes: new { @class = "form-control" })
+            </th>
+            <th style="padding:10px;padding-right:10px;">
+                @Html.TextBox("incnum", "", htmlAttributes: new { @class = "form-control", placeholder = "Enter INC No" })
+            </th>
+            <th style="padding:10px;padding-right:10px;" width="200px">
+                @Html.DropDownList("TestCategoryID", new List<SelectListItem>()
+         {
+             new SelectListItem {Text="JMS", Value="JMS"},
+             new SelectListItem {Text="Inventory Control", Value="Inventory Control"},
+             new SelectListItem {Text="Inventory Control Mobile", Value="Inventory Control Mobile"},
+             new SelectListItem {Text="Blancco", Value="Blancco"},
+             new SelectListItem {Text="DOCS Online", Value="DOCS Online"},
+             new SelectListItem {Text="Payment Portal", Value="Payment Portal"},
+             new SelectListItem {Text="Remediation", Value="Remediation"},
+               new SelectListItem {Text="Remediation", Value="TechAssistTickets"},
+             new SelectListItem {Text="IT-Desktop Support", Value="IT-Desktop Support"}
+
+         }, "Applications", htmlAttributes: new { @class = "form-control" })
+
+            </th>
+
+            <th style="padding:10px;padding-right:10px;" width="200px">
+                @Html.DropDownList("RequestTypeID", new List<SelectListItem>()
+         {
+             new SelectListItem {Text="Incident Request ", Value="Incident Request "},
+             new SelectListItem {Text="Development Request", Value="Development Request"}
+
+         }, "Request Types", htmlAttributes: new { @class = "form-control" })
+
+            </th>
+            <th style="padding:10px;padding-right:10px;">
+                <input type="submit" value="Search" class="btn btn-primary active" name="submitButton" />
+            </th>
+            <th style="padding:10px;padding-right:10px;">
+                <button type="submit" value="ExportToExcel" class="btn btn-default btn-sm" name="submitButton">
+                    <span class="glyphicon glyphicon-export"></span> Export
+                </button>
+            </th>
+        }
+    </tr>
+
+</table>
+<div class="container" style="margin-left:0px;padding-top:5px">
+    <div class="row" style="width:170%">
+        <div class="col-md-12">
+            <table id="inctable" class="table  table-condensed table-responsive table-hover " style="font-size:small; border-top:solid; border:solid;border-width:1px; border-top-width:1px; border-color:#959ca1;">
+
+                <thead style="font-weight:400; background-color:#F79636;color:#ffffff;" id="HeaderTR">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.INC)
+                        </th>
+
+                        <th>
+                            @Html.Label("APPLICATION")
+                        </th>
+                        <th>
+                            @Html.Label("DATE")
+
+                        </th>
+                        <th>
+                            @Html.Label("USER")
+
+                        </th>
+                        <th>
+                            @Html.Label("LOCATION")
+                        </th>
+                        <th>
+                            @Html.Label("PRIORITY")
+
+                        </th>
+                        <th>
+                            @Html.Label("DETAILS")
+                        </th>
+                        <th>
+                            @Html.Label("STATUS")
+                        </th>
+
+                        <th>
+                            @Html.Label("NOTE")
+
+                        </th>
+                        <th>
+                            @Html.Label("INVESTIGATION")
+
+                        </th>
+                        <th>
+                            @Html.Label("APPROVAL")
+
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+
+                        <tr class="body-content dt-rowReorder-float d-flex">
+                            <td>
+                                <a href="@Url.Action("Details",new { INC = item.INC })">
+
+                                    @Html.DisplayFor(modelItem => item.INC)
+                                </a>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TestCategory)
+                            </td>
+
+                            <td>
+                                @if (@item.DateCreated != null)
+                                {
+                                    @item.DateCreated.Value.ToShortDateString()
+                                }
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UserName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Location)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Priority)
+                            </td>
+                            <td style="width:70%">
+
+                                @Html.DisplayFor(@modelItem => item.TestDetails)
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Status)
+                            </td>
+                            <td class="col-lg-12">
+                                @Html.DisplayFor(modelItem => item.DevNotes)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Investigation)
+                            </td>
+                            <td>
+
+                                <label for="success" class="btn btn-success">Approved <input type="checkbox" id="success" class="badgebox"></label>
+
+                                <label for="danger" class="btn btn-danger">Rejected <input type="checkbox" id="danger" class="badgebox"></label>
+                                @*<input type="checkbox" checked data-toggle="toggle" data-onstyle="success" id="chkIsActive" data-on="Approved" data-off="Rejected" data-onstyle="success" data-offstyle="danger"onchange="ResourceChange(this);">*@
+
+                            </td>
+
+
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    0                   @Scripts.Render("~/bundles/jqueryval")
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.12.1.min.js")"></script>
+    <script src="~/Scripts/datatables.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#inctable').DataTable({
+                "order": [[0, 'desc']]
+            });
+        });
+        //  ExportTimesSheetToExcel", "Candidates"
+
+        function ExportData() {
+            var data = {};
+            $.ajax({
+                type: "POST",
+                url: './ExportTimesSheetToExcel',
+                json: data
+
+            });
+        }
+        $("[name='my-checkbox']").bootstrapSwitch();
+    </script>
+    <body>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
+        <script src="https://cdn.datatables.net/plug-ins/1.10.15/api/row().show().js"></script>
+    </body>
+}
+
+
+<style>
+    .btn span.glyphicon {
+        opacity: 0;
+    }
+
+    .btn.active span.glyphicon {
+        opacity: 1;
+    }
+
+    .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+        background-color: #FFA500;
+        border-color: white;
+    }
+
+    .btn-warning {
+        background-color: #FFA500;
+        font-size: 11px;
+    }
+
+    .black {
+        color: black;
+    }
+
+    body {
+        padding-top: 50px;
+        padding-bottom: 5px;
+        /*margin-left:5px;*/
+    }
+
+    .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+        color: #333333;
+        background-color: red;
+        border-color: red;
+    }
+
+    /* Set padding to keep content from hitting the edges */
+    .body-content {
+        padding-left: 0px;
+        padding-right: 5px;
+        margin-left: 5px;
+    }
+
+    .dataTables_filter {
+        float: right;
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 5px;
+    }
+
+    .page-item.active .page-link {
+        color: white !important;
+        background-color: orange !important;
+        border-color: gray !important;
+    }
+
+    .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+        background-color: #FFA500;
+        border-color: white;
+    }
+
+    .glyphicon {
+        font-size: 15px;
+        color: lightgray;
+    }
+
+    .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+        background-color: #FFA500;
+        border-color: white;
+    }
+
+
+    .page-item.active .page-link {
+        color: white !important;
+        background-color: orange !important;
+        border-color: gray !important;
+    }
+
+    .selected {
+        color: black;
+        background-color: lightgray;
+    }
+
+    .btn-success {
+        background-color: green;
+    }
+</style>
