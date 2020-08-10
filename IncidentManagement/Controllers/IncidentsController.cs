@@ -259,21 +259,33 @@ namespace IncidentManagement.Controllers
         }
         public static string SendEmail(string recipient, string subject, string body)
         {
+            string SmtpClientIP = ConfigurationManager.AppSettings["SmtpClientIP"];
+            int SmtpClientPort = Convert.ToInt32(ConfigurationManager.AppSettings["SmtpClientPort"]);
+            string SmtpUser = ConfigurationManager.AppSettings["SmtpUser"];
+            string SmtpPassword = ConfigurationManager.AppSettings["SmtpPassword"];
+            string SmtpFromMail = ConfigurationManager.AppSettings["SmtpFromMail"];
+
+            SmtpClient smtout = new SmtpClient(SmtpClientIP, SmtpClientPort);
+            smtout.EnableSsl = true;
+            smtout.Credentials = new System.Net.NetworkCredential(SmtpUser, SmtpPassword);
+
             if (string.IsNullOrEmpty(recipient))
             {
                 recipient = "support@verser.com.au";
-
             }
             MailMessage email = new MailMessage();
-            MailAddress froma = new MailAddress("no-reply-Tickets@verser.com.au");
+            MailAddress froma = new MailAddress(SmtpFromMail);
+            //if (file != null)
+            //{
+            //    System.Net.Mail.Attachment attachment;
+            //    attachment = new System.Net.Mail.Attachment(file);
+            //    email.Attachments.Add(attachment);
+            //}
             email.From = froma;
-
             email.To.Add(recipient);
             email.Subject = subject;
             email.IsBodyHtml = true; //just in case you want to send as html if it is regular text then false.
             email.Body = body;
-            string SmtpClientIP = ConfigurationManager.AppSettings["SmtpClientIP"];
-            SmtpClient smtout = new SmtpClient(SmtpClientIP);
             try
             {
                 smtout.Send(email);

@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<IncidentManagement.Models.Incident>
-
 @using System.Linq;
 @using System.Data.Entity;
+@using IncidentManagement.HelperServices;
 @{
     ViewBag.Title = "Incident Management";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -117,10 +117,10 @@
                             @Html.Label("NOTE")
 
                         </th>
-                        <th>
+                        @*<th>
                             @Html.Label("INVESTIGATION")
 
-                        </th>
+                        </th>*@
                         <th>
                             @Html.Label("APPROVAL")
 
@@ -168,21 +168,20 @@
                             <td class="col-lg-12">
                                 @Html.DisplayFor(modelItem => item.DevNotes)
                             </td>
-                            <td>
+                            @*<td>
                                 @Html.DisplayFor(modelItem => item.Investigation)
-                            </td>
+                            </td>*@
                             <td>
-
-                                <label for="success" class="btn btn-success">Approved <input type="checkbox" id="success" class="badgebox"></label>
-
-                                <label for="danger" class="btn btn-danger">Rejected <input type="checkbox" id="danger" class="badgebox"></label>
+                                @if (UserRole.UserCanEdit())
+                                {
+                                <label for="success" class="btn btn-success btn-sm">Approved </label>
+                                @*<input type="submit" id="success btn-sm" class="badgebox">*@
+                                <label for="danger" class="btn btn-danger btn-sm">Rejected </label>
+                                @*<input type="submit" id="danger btn-sm" class="badgebox">*@
                                 @*<input type="checkbox" checked data-toggle="toggle" data-onstyle="success" id="chkIsActive" data-on="Approved" data-off="Rejected" data-onstyle="success" data-offstyle="danger"onchange="ResourceChange(this);">*@
-
+                                }
                             </td>
-
-
-                        </tr>
-
+                         </tr>
                     }
                 </tbody>
             </table>

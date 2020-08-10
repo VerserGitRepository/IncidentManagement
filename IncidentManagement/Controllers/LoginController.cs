@@ -31,7 +31,9 @@ namespace IncidentManagement.Controllers
             if (userReturn.Result.IsLoggedIn == true)
             {
                 Session["FullUserName"] = UserName;
+                Session["UserName"] = UserName;
                 Session["ErrorMessage"] = null;
+                Session["Administrator"] = "Administrator";
                 return RedirectToAction("Index", "Incidents");
             }
             else
