@@ -41,6 +41,7 @@ namespace IncidentManagement.Models
         [Required]
         [EmailAddress]
         public string Email { get; set; }
+        [Required]
         public string Orders { get; set; }
         public string RequestType { get; set; }
         public bool IsActive { get; set; }

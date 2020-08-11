@@ -118,15 +118,17 @@
 
                         </th>
                         @*<th>
-                            @Html.Label("INVESTIGATION")
+            @Html.Label("INVESTIGATION")
 
-                        </th>*@
-                        <th>
-                            @Html.Label("APPROVAL")
+        </th>*@
+                        @if (UserRole.UserCanEdit())
+                        {
+                            <th>
+                                @Html.Label("APPROVAL")
 
-                        </th>
+                            </th>}
 
-                    </tr>
+                        </tr>
                 </thead>
                 <tbody>
                     @foreach (var item in Model)
@@ -175,6 +177,7 @@
                                 @if (UserRole.UserCanEdit())
                                 {
                                 <label for="success" class="btn btn-success btn-sm">Approved </label>
+
                                 @*<input type="submit" id="success btn-sm" class="badgebox">*@
                                 <label for="danger" class="btn btn-danger btn-sm">Rejected </label>
                                 @*<input type="submit" id="danger btn-sm" class="badgebox">*@

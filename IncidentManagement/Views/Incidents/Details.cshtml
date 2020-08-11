@@ -55,9 +55,9 @@
     <dl class="dl-horizontal table-condensed table-responsive table-bordered">
         <dt> @Html.DisplayName("INC")</dt>
         <dd>@Html.DisplayFor(model => model.INC)</dd>
-        
+
         <hr />
-        
+
         <dt>
             @Html.DisplayName("Date")
         </dt>
@@ -99,7 +99,14 @@
             @Html.DisplayFor(model => model.FeedBackSource)
         </dd>
         <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.Orders)
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.Orders)
+        </dd>
+        <hr />
         <dt>
             @Html.DisplayNameFor(model => model.Priority)
         </dt>
@@ -150,13 +157,13 @@
         </dt>
 
         <dd>
-              @Html.HiddenFor(model => model.FilePath)
-                @if (!string.IsNullOrEmpty(Model.FilePath))
+            @Html.HiddenFor(model => model.FilePath)
+            @if (!string.IsNullOrEmpty(Model.FilePath))
             {@Html.ActionLink("File Download", "Download", "Incidents", new { file = Model.FilePath }, null)}
-           
+
         </dd>
 
-        
+
     </dl>
 </div>
 
