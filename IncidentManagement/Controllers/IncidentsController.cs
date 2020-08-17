@@ -334,5 +334,11 @@ namespace IncidentManagement.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public string ApproveRejectRequest(string TicketState)
+        {
+
+            return "Success";
+        }
     }
 }
