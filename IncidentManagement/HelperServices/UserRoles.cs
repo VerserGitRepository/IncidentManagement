@@ -12,15 +12,12 @@ namespace IncidentManagement.HelperServices
             bool Returnflag = false;
             if (HttpContext.Current.Session["FullUserName"] != null)
             {
-                
                  if (HttpContext.Current.Session["Administrator"] != null && HttpContext.Current.Session["Administrator"].ToString() == "Administrator")
                 {
                     Returnflag = true;
-                }
-               
+                }               
             }
             return Returnflag;
         }
-
     }
 }

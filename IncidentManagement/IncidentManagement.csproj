@@ -237,6 +237,7 @@
     <Compile Include="Models\Incident.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ListItemModel.cs" />
     <Compile Include="Models\Location.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -472,6 +473,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\CompanyLogo.jpg" />
+    <Content Include="Images\line_conn.gif" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\VerserLogo.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

@@ -5,54 +5,97 @@
     //Layout = "~/Views/Account/Login.cshtml";
 }
 
-<div class="row">
-    @using (Html.BeginForm("Login", "Login", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-    {
-        @Html.AntiForgeryToken()
-        <div style="padding-top:50px">
-            <div class="col-sm-5 col-md-offset-2">
-                <div class="well">
-                    <!--Table to capture username and password-->
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr class="success">
-                                <th colspan="2">
-                                    <h4 style="color:grey" align="center">JMS Login</h4>
-                                    <!--<a href="Register.html" class="btn btn-success pull-right">
-                                        Register
-                                    </a>-->
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Usename</td>
-                                <td>
-                                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Password</td>
-                                <td>
-                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                                </td>
-                            </tr>
-                            <tr class="success">
-                                <td colspan="2">
-                                    <input type="submit" value="Log in" class="btn btn-success" />
-                                </td>
-                            </tr>
 
-                        </tbody>
-                    </table>
+<body style="padding-top:80px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-md-offset-3">
+                <div class="panel panel-login">
+                    <div class="panel-body">
+                        <div class="row" align="center">
+                            <img src="~/Images/CompanyLogo.jpg" />
+                            @using (Html.BeginForm("Login", "Login", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                            {
+                                <br />
+                                <div class="col-lg-12">
+                                    <div class="input-group col-lg-8 col-md-offset-1">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        @Html.TextBoxFor(Model => Model.UserName, new { @class = "form-control", placeholder = "JMS UserID" })
+                                    </div>
+                                    <br /><br />
+
+                                    <div class="input-group col-lg-8 col-md-offset-1">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                        @Html.PasswordFor(Model => Model.Password, new { @class = "form-control", placeholder = "JMS Password" })
+                                    </div><br /><br />
+
+                                    <div class="form-group col-lg-10 col-md-offset-0">
+                                        <br />
+                                        <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In" style="background-color:grey;border-color:gray">
+                                    </div>
+                                </div>
+                                <div>
+                                    @if (TempData["ErrorMessage"] != null)
+                                    {
+                                        <p style="color:red;padding-left:60px;">@TempData["ErrorMessage"].ToString()</p>
+                                    }
+                                </div>
+                            }
+                        </div>
+                    </div>
+
                 </div>
-
             </div>
         </div>
+    </div>
+</body>
+<style>
+    body {
+        padding-top: 0px;
     }
-</div>
+    .panel-login {
+        border-color: #ccc;
+        -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+        -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+        box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+    }
+
+        .panel-login input[type="text"], .panel-login input[type="email"], .panel-login input[type="password"] {
+            height: 45px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            -webkit-transition: all 0.1s linear;
+            -moz-transition: all 0.1s linear;
+            transition: all 0.1s linear;
+        }
+
+        .panel-login input:hover,
+        .panel-login input:focus {
+            outline: none;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            border-color: #ccc;
+        }
+
+    .btn-login {
+        background-color: #59B2E0;
+        outline: none;
+        color: #fff;
+        font-size: 14px;
+        height: auto;
+        font-weight: normal;
+        padding: 14px 0;
+        text-transform: uppercase;
+        border-color: #59B2E6;
+    }
+        .btn-login:hover,
+        .btn-login:focus {
+            color: #fff;
+            background-color: #53A3CD;
+            border-color: #53A3CD;
+        }
+</style>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

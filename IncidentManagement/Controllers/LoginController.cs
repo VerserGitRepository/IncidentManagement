@@ -10,8 +10,7 @@ using IncidentManagement.HelperServices;
 namespace IncidentManagement.Controllers
 {
     public class LoginController : Controller
-    {
-       
+    {       
         [HttpGet]
         public ActionResult Login()
         {
@@ -30,10 +29,18 @@ namespace IncidentManagement.Controllers
             Task<LoginModel> userReturn = LoginService.Login(logindetails);
             if (userReturn.Result.IsLoggedIn == true)
             {
-                Session["FullUserName"] = UserName;
+                Session["FullUserName"] = logindetails.UserName;
                 Session["UserName"] = UserName;
                 Session["ErrorMessage"] = null;
-                Session["Administrator"] = "Administrator";
+                var userrRoles = LoginService.UserRoleList(UserName);
+                if (userrRoles.Result.Count > 0)
+                {
+                    var usrRoles = userrRoles.Result.Where(u => u.Value == "Administrator").FirstOrDefault();
+                    if (usrRoles !=null)
+                    {
+                        Session["Administrator"] = "Administrator";
+                    }                   
+                }               
                 return RedirectToAction("Index", "Incidents");
             }
             else

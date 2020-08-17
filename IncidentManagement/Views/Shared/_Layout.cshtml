@@ -11,8 +11,7 @@
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            @*<h4>Verser Technology - Ticket Management</h4>*@
+        <div class="container">         
             
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -26,9 +25,7 @@
                 <div class="navbar-collapse collapse">
                 @if (Session["FullUserName"] != null)
                 {
-                    <ul class="nav navbar-nav">
-                      @*<li>@Html.ActionLink("Home", "Index", "Incidents")</li>
-                     @Html.ActionLink("HOME", "Index", "Incidents", new { area = "" }, new { @class = "navbar-brand" })</li> *@
+                    <ul class="nav navbar-nav">                    
                         <li style="font-size:large;color:white;font-weight:300"> @Html.ActionLink("HOME", "Index", "Incidents")</li>
                         <li style="font-size:large;color:white;font-weight:300">@Html.ActionLink("REGISTER INCIDENT", "Create", "Incidents")</li>
                     </ul>
@@ -63,7 +60,7 @@
         .navbar-inverse .navbar-nav > li > a {
             color: white;
             font-family: sans-serif;
-            font-weight: 600;
+            font-weight: 400;
         }
 
             .navbar-inverse .navbar-nav > li > a:hover {

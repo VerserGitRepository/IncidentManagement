@@ -30,7 +30,7 @@ namespace IncidentManagement.Controllers
             else
             {
                 Session["ErrorMessage"] = "Invalid User ID Or Password";
-                return RedirectToAction("Login", "Home");
+                return RedirectToAction("Login", "Login");
             }
 
         }
@@ -115,7 +115,7 @@ namespace IncidentManagement.Controllers
             else
             {
                 Session["ErrorMessage"] = "Invalid User ID Or Password";
-                return RedirectToAction("Login", "Home");
+                return RedirectToAction("Login", "Login");
             }
         }
         public ActionResult Details(int? INC)
@@ -154,8 +154,9 @@ namespace IncidentManagement.Controllers
             }
         }
         [HttpPost]
-        public ActionResult Create([Bind(Include = "RequestType,TestCategory,DateCreated,UserName,Location,FeedBackSource,Priority,TestDetails,Investigation,DevNotes,FilePath,Email")] Incident incident, string submitButton)
+        public ActionResult Create( Incident incident, string submitButton)
         {
+            //[Bind(Include = "RequestType,TestCategory,DateCreated,UserName,Location,FeedBackSource,Priority,TestDetails,Investigation,DevNotes,FilePath,Email,Orders")]
             if (Session["FullUserName"] != null)
             {
                 Session["ErrorMessage"] = null;
