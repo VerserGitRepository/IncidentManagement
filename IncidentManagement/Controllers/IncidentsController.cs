@@ -335,10 +335,35 @@ namespace IncidentManagement.Controllers
             base.Dispose(disposing);
         }
 
-        public string ApproveRejectRequest(string TicketState)
+        [HttpPost]
+        public string ApprovedRequest(int TicketId)
         {
-
-            return "Success";
+            if (TicketId > 0)
+            {
+                var requestData = db.Incidents.Where(s => s.INC == TicketId).FirstOrDefault();
+                if (requestData != null)
+                {
+                    requestData.Status = "APPROVED";
+                    db.SaveChanges();
+                    return "Success";
+                }
+            }
+            return "Failed";
+        }
+        [HttpPost]
+        public string RejectedRequest(int TicketId)
+        {
+            if (TicketId > 0)
+            {
+                var requestData = db.Incidents.Where(s => s.INC == TicketId).FirstOrDefault();
+                if (requestData != null)
+                {
+                    requestData.Status = "REJECTED";
+                    db.SaveChanges();
+                    return "Success";
+                }
+            }
+            return "Failed";
         }
     }
 }
