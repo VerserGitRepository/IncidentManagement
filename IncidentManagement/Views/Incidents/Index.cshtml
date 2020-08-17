@@ -173,17 +173,20 @@
                             @*<td>
                                 @Html.DisplayFor(modelItem => item.Investigation)
                             </td>*@
-                            <td>
-                                @if (UserRole.UserCanEdit())
-                                {
-                                <label for="success" class="btn btn-success btn-sm">Approved </label>
-
-                                @*<input type="submit" id="success btn-sm" class="badgebox">*@
-                                <label for="danger" class="btn btn-danger btn-sm">Rejected </label>
+                        <td>
+                            @if (UserRole.UserCanEdit())
+                            {
+                                <button type="button" class="btn btn-labeled btn-success">
+                                    <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span>
+                                </button>
+                                <button type="button" class="btn btn-labeled btn-danger">
+                                    <span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>
+                                </button>
+                               
                                 @*<input type="submit" id="danger btn-sm" class="badgebox">*@
                                 @*<input type="checkbox" checked data-toggle="toggle" data-onstyle="success" id="chkIsActive" data-on="Approved" data-off="Rejected" data-onstyle="success" data-offstyle="danger"onchange="ResourceChange(this);">*@
-                                }
-                            </td>
+                            }
+                        </td>
                          </tr>
                     }
                 </tbody>
