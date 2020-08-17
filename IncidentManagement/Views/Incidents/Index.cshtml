@@ -12,8 +12,8 @@
 <link href="@Url.Content("https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css")" rel="stylesheet" type="text/css" />
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" type="text/javascript"></script>
 @*<link href="Content/bootstrap.min.css" rel="stylesheet" />
-<script src="Scripts/jquery-1.10.2.min.js"></script>
-<script src="Scripts/bootstrap.min.js"></script>*@
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>*@
 
 <table class="table table-responsive">
     <tr>
@@ -77,10 +77,9 @@
             </th>
         }
     </tr>
-
 </table>
 <div class="container" style="margin-left:0px;padding-top:5px">
-    <div class="row" style="width:170%">
+    <div class="row" style="width:160%">
         <div class="col-md-12">
             <table id="inctable" class="table  table-condensed table-responsive table-hover " style="font-size:smaller; border-top:solid; border:solid;border-width:1px; border-top-width:1px; border-color:#959ca1;">
 
@@ -114,28 +113,20 @@
                         <th>
                             @Html.Label("STATUS")
                         </th>
-
                         <th>
                             @Html.Label("NOTE")
-
                         </th>
-                        @*<th>
-            @Html.Label("INVESTIGATION")
-
-        </th>*@
-                        @if (UserRole.UserCanEdit())
-                        {
-                            <th>
+                        <th>
+                            @if (UserRole.UserCanEdit())
+                            {
                                 @Html.Label("APPROVAL")
-
-                            </th>}
-
-                        </tr>
+                            }
+                        </th>
+                    </tr>
                 </thead>
                 <tbody>
                     @foreach (var item in Model)
                     {
-
                         <tr class="body-content dt-rowReorder-float d-flex">
                             <td>
                                 <a href="@Url.Action("Details",new { INC = item.INC })">
@@ -162,27 +153,45 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.Priority)
                             </td>
-                            <td style="width:70%">
+                            <td>
+                                @if (!string.IsNullOrEmpty(item.TestDetails.ToString()) && item.TestDetails.Length > 250)
+                                {
+                                    item.TestDetails = item.TestDetails.Substring(0, 250).ToString();
 
-                                @Html.DisplayFor(@modelItem => item.TestDetails)
-
+                                    @Html.DisplayFor(modelItem => item.TestDetails)
+                                }
+                                else
+                                {
+                                    @Html.DisplayFor(modelItem => item.TestDetails)
+                                }
+                            </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Status)
                             </td>
-                            <td class="col-lg-12">
-                                @Html.DisplayFor(modelItem => item.DevNotes)
+                            <td>
+                                @if (item.DevNotes != null && item.DevNotes.Length > 250)
+                                {
+                                    item.DevNotes = item.DevNotes.Substring(0, 250).ToString();
+
+                                    @Html.DisplayFor(modelItem => item.DevNotes)
+                                }
+                                else
+                                {
+                                    @Html.DisplayFor(modelItem => item.DevNotes)
+                                }
                             </td>
-                            @*<td>
-                                @Html.DisplayFor(modelItem => item.Investigation)
-                            </td>*@
                             <td>
                                 @if (UserRole.UserCanEdit())
                                 {
-                                <label for="success" class="btn btn-success btn-sm" onclick="ApproveRejectRequest('APPROVED')">Approved </label>                              
-                                <label for="danger" class="btn btn-danger btn-sm" onclick="ApproveRejectRequest('REJECTED')">Rejected </label>
+                                    <button type="button" class="btn btn-labeled btn-success" data-id="@item.INC" onclick="ApprovedRequest()">
+                                        <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span>
+                                    </button>
+                                    <button type="submit" class="btn btn-labeled btn-danger" onclick="RejectedRequest()">
+                                        <span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>
+                                    </button>
                                 }
                             </td>
-                         </tr>
+                        </tr>
                     }
                 </tbody>
             </table>
@@ -191,7 +200,7 @@
 </div>
 
 @section Scripts {
-                       @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryval")
     <script src="@Url.Content("~/Scripts/jquery-ui-1.12.1.min.js")"></script>
     <script src="~/Scripts/datatables.min.js"></script>
     <script type="text/javascript">
@@ -213,16 +222,30 @@
         }
         $("[name='my-checkbox']").bootstrapSwitch();
 
-        function ApproveRejectRequest(string TicketState) {
-            var data = { TicketState = TicketState};
+        function ApprovedRequest() {     
+            var $buttonClicked = $(this);
+            var Id = $buttonClicked.attr('data-id');
             $.ajax({
-                type: "POST",
-                url: './ApproveRejectRequest',
-                json: data
-
+                type: "Post",
+                url: './ApprovedRequest',
+              data: { TicketId = Id},
+                'success': function () {
+                    alert("Approved")
+                }
+            });           
+        }
+        function RejectedRequest() {
+            var $buttonClicked = $(this);
+            var Id = $buttonClicked.attr('data-id');
+            $.ajax({
+                type: "Post",
+                url: './RejectedRequest',
+                data: { TicketId = Id },
+                'success': function () {
+                    alert("Rejected")
+                }
             });
         }
-
     </script>
     <body>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
