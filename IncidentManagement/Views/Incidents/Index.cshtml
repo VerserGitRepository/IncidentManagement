@@ -183,10 +183,10 @@
                             <td>
                                 @if (UserRole.UserCanEdit())
                                 {
-                                    <button type="button" class="btn btn-labeled btn-success" data-id="@item.INC" onclick="ApprovedRequest()">
+                                    <button type="button" class="btn btn-labeled btn-success" onclick="ApprovedRequest(@item.INC)">
                                         <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span>
                                     </button>
-                                    <button type="submit" class="btn btn-labeled btn-danger" onclick="RejectedRequest()">
+                                    <button type="submit" class="btn btn-labeled btn-danger" onclick="RejectedRequest(@item.INC)">
                                         <span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>
                                     </button>
                                 }
@@ -198,7 +198,13 @@
         </div>
     </div>
 </div>
-
+<div id='myModal' class='modal'>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id='myModalContent'></div>
+        </div>
+    </div>
+</div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <script src="@Url.Content("~/Scripts/jquery-ui-1.12.1.min.js")"></script>
@@ -210,7 +216,9 @@
             });
         });
         //  ExportTimesSheetToExcel", "Candidates"
-
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').trigger('focus')
+        });
         function ExportData() {
             var data = {};
             $.ajax({
@@ -222,29 +230,28 @@
         }
         $("[name='my-checkbox']").bootstrapSwitch();
 
-        function ApprovedRequest() {     
-            var $buttonClicked = $(this);
-            var Id = $buttonClicked.attr('data-id');
+        function ApprovedRequest(Id) {     
+            var TicketId = Id
             $.ajax({
                 type: "Post",
                 url: './ApprovedRequest',
-              data: { TicketId = Id},
+                data: { "TicketId" : TicketId},
                 'success': function () {
-                    alert("Approved")
+                    alert("Successfully Approved!")                
                 }
             });           
         }
-        function RejectedRequest() {
-            var $buttonClicked = $(this);
-            var Id = $buttonClicked.attr('data-id');
+        function RejectedRequest(Id) {
+     
+            var TicketId = Id
             $.ajax({
                 type: "Post",
                 url: './RejectedRequest',
-                data: { TicketId = Id },
+                data: { "TicketId": TicketId },
                 'success': function () {
-                    alert("Rejected")
+                    alert("Successfully Rejected!")
                 }
-            });
+            }); 
         }
     </script>
     <body>

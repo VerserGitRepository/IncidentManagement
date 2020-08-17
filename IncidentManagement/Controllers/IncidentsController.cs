@@ -344,6 +344,11 @@ namespace IncidentManagement.Controllers
                 if (requestData != null)
                 {
                     requestData.Status = "APPROVED";
+                    if (requestData.Orders ==null )
+                    {
+                        requestData.Orders = "00";
+                    }
+                    db.Entry(requestData).State = EntityState.Modified;                   
                     db.SaveChanges();
                     return "Success";
                 }
@@ -356,9 +361,15 @@ namespace IncidentManagement.Controllers
             if (TicketId > 0)
             {
                 var requestData = db.Incidents.Where(s => s.INC == TicketId).FirstOrDefault();
+
                 if (requestData != null)
                 {
                     requestData.Status = "REJECTED";
+                    if (requestData.Orders == null)
+                    {
+                        requestData.Orders = "00";
+                    }
+                    db.Entry(requestData).State = EntityState.Modified;
                     db.SaveChanges();
                     return "Success";
                 }
