@@ -246,8 +246,9 @@ namespace IncidentManagement.Controllers
             }
         }
         [HttpPost]
-        public ActionResult Edit([Bind(Include = "Id,INC,Enviroment,TestCategory,DateCreated,UserName,Location,SoftwareVersion,TestCase,FeedBackSource,Priority,TestDetails,Status,TesterNote,Investigation,DevNotes,Email,FilePath")] Incident incident)
+        public ActionResult Edit(Incident incident)
         {
+            //[Bind(Include = "Id,INC,Enviroment,TestCategory,DateCreated,UserName,Location,SoftwareVersion,TestCase,FeedBackSource,Priority,TestDetails,Status,TesterNote,Investigation,DevNotes,Email,FilePath,Orders")] 
             if (ModelState.IsValid)
             {
                 db.Entry(incident).State = EntityState.Modified;

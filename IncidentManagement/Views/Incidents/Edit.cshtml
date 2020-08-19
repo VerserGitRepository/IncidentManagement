@@ -101,6 +101,14 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.Orders, htmlAttributes: new { @class = "control-label col-lg-2" })
+            <div class="col-lg-5">
+                @Html.EditorFor(model => model.Orders, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Orders, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(model => model.Investigation, htmlAttributes: new { @class = "control-label col-lg-2" })
             <div class="col-lg-5">
                 @Html.EditorFor(model => model.Investigation, new { htmlAttributes = new { @class = "form-control" } })
