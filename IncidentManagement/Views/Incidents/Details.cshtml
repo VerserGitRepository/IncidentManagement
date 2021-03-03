@@ -4,157 +4,163 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<br>
-<div class="col-md-6 col-md-offset-3">
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="@Url.Content("https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css")" rel="stylesheet" type="text/css" />
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+
+<div class="col-md-8" style="margin-top:15px">
 
     <div class="class=" table-bordered">
         <div class="panel-heading" align="center" style="background-color:#FFA500;color:white; vertical-align:top; font-weight:500;font-size:large">
             TICKET
         </div>
 
-        <div class="form-horizontal" style="color:gray;padding-top:20px; color:#333">
+        <div class="form-horizontal" style="color:gray;color:#333">
 
-            <div class="form-group">
-                <div class="col-lg-3" style="text-align:right; font-weight:800">
-                    @Html.DisplayName("INC")
-                </div>
+            <table id="inctable" class="table  table-condensed table-responsive table-hover table-bordered" style=" border-top:solid; border:solid;border-width:1px; border-top-width:1px; border-color:#959ca1;">
+                <thead style="font-weight:400; background-color:#F27900;color:#ffffff;" id="HeaderTR">
+                    <tr>
+                        <th style="text-align:center">
+                            @Html.DisplayName("INC")
+                        </th>
+                        <th style="text-align:center">
+                            @Html.DisplayName("Date")
+                        </th>
+                        <th style="text-align:center">
+                            @Html.DisplayName("Request Type")
+                        </th>
+                        <th style="text-align:center">
+                            @Html.DisplayNameFor(model => model.UserName)
+                        </th>
+                        <th style="text-align:center">
+                            @Html.DisplayNameFor(model => model.Location)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="body-content dt-rowReorder-float d-flex">
+                        <td style="text-align:center">
+                            @Html.DisplayFor(model => model.INC)
+                        </td>
+                        <td style="text-align:center">
+                            @Html.DisplayFor(model => model.DateCreated)
+                        </td>
+                        <td style="text-align:center">
+                            @Html.DisplayFor(model => model.RequestType)
+                        </td>
+                        <td style="text-align:center">
+                            @Html.DisplayFor(model => model.UserName)
+                        </td>
+                        <td style="text-align:center">
+                            @Html.DisplayFor(model => model.Location)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
-                <div class="col-lg-9">
-                    @Html.DisplayFor(model => model.INC)
-                </div>
-            </div>
 
-            <div class="form-group">
-                <div class="col-lg-3" style="text-align:right; font-weight:800">
-                    @Html.DisplayName("Date")
-                </div>
 
-                <div class="col-lg-9">
-                    @Html.DisplayFor(model => model.DateCreated)
-                </div>
-            </div>
+            <div class="col-lg-12 well">
+                <div class="form-group">
+                    <div class="col-lg-2" style="text-align:right; font-weight:800">
+                        @Html.DisplayName("Request Details")
+                    </div>
 
-            <div class="form-group">
-                <div class="col-lg-3" style="text-align:right; font-weight:800">
-                    @Html.DisplayName("Request Type")
-                </div>
-
-                <div class="col-lg-9">
-                    @Html.DisplayFor(model => model.RequestType)
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-lg-3" style="text-align:right; font-weight:800">
-                    @Html.DisplayNameFor(model => model.UserName)
-                </div>
-
-                <div class="col-lg-9">
-                    @Html.DisplayFor(model => model.UserName)
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-lg-3" style="text-align:right; font-weight:800">
-                    @Html.DisplayNameFor(model => model.Location)
-                </div>
-
-                <div class="col-lg-9">
-                    @Html.DisplayFor(model => model.Location)
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-lg-3" style="text-align:right; font-weight:800">
-                    @Html.DisplayNameFor(model => model.FeedBackSource)
-                </div>
-
-                <div class="col-lg-9">
-                    @Html.DisplayFor(model => model.FeedBackSource)
+                    <div class="col-lg-10">
+                        @Html.DisplayFor(model => model.TestDetails)
+                    </div>
                 </div>
             </div>
 
-            <div class="form-group">
-                <div class="col-lg-3" style="text-align:right; font-weight:800">
-                    @Html.DisplayNameFor(model => model.Orders)
+
+            <div class="col-lg-12 well">
+                <div class="form-group">
+                    <div class="col-lg-2" style="text-align:right; font-weight:800">
+                        @Html.DisplayNameFor(model => model.FeedBackSource)
+                    </div>
+
+                    <div class="col-lg-9">
+                        @Html.DisplayFor(model => model.FeedBackSource)
+                    </div>
                 </div>
 
-                <div class="col-lg-9">
-                    @Html.DisplayFor(model => model.Orders)
+                <div class="form-group">
+                    <div class="col-lg-2" style="text-align:right; font-weight:800">
+                        @Html.DisplayNameFor(model => model.Orders)
+                    </div>
+
+                    <div class="col-lg-9">
+                        @Html.DisplayFor(model => model.Orders)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-2" style="text-align:right; font-weight:800">
+                        @Html.DisplayNameFor(model => model.Priority)
+                    </div>
+
+                    <div class="col-lg-9">
+                        @Html.DisplayFor(model => model.Priority)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-2" style="text-align:right; font-weight:800">
+                        @Html.DisplayNameFor(model => model.Status)
+                    </div>
+
+                    <div class="col-lg-9">
+                        @Html.DisplayFor(model => model.Status)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-2" style="text-align:right; font-weight:800">
+                        @Html.DisplayNameFor(model => model.Investigation)
+                    </div>
+
+                    <div class="col-lg-9">
+                        @Html.DisplayFor(model => model.Investigation)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-2" style="text-align:right; font-weight:800">
+                        @Html.DisplayNameFor(model => model.DevNotes)
+                    </div>
+
+                    <div class="col-lg-9">
+                        @Html.DisplayFor(model => model.DevNotes)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-2" style="text-align:right; font-weight:800">
+                        @Html.DisplayNameFor(model => model.Email)
+                    </div>
+
+                    <div class="col-lg-9">
+                        @Html.DisplayFor(model => model.Email)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-2" style="text-align:right; font-weight:800">
+                        @Html.DisplayName("File Download")
+                    </div>
+
+                    <div class="col-lg-9">
+                        @Html.HiddenFor(model => model.FilePath)
+                        @if (!string.IsNullOrEmpty(Model.FilePath))
+                        {@Html.ActionLink("File Download", "Download", "Incidents", new { file = Model.FilePath }, null)}
+                    </div>
                 </div>
             </div>
-
-            <div class="form-group">
-                <div class="col-lg-3" style="text-align:right; font-weight:800">
-                    @Html.DisplayNameFor(model => model.Priority)
-                </div>
-
-                <div class="col-lg-9">
-                    @Html.DisplayFor(model => model.Priority)
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-lg-3" style="text-align:right; font-weight:800">
-                    @Html.DisplayName("Request Details")
-                </div>
-
-                <div class="col-lg-9">
-                    @Html.DisplayFor(model => model.TestDetails)
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-lg-3" style="text-align:right; font-weight:800">
-                    @Html.DisplayNameFor(model => model.Status)
-                </div>
-
-                <div class="col-lg-9">
-                    @Html.DisplayFor(model => model.Status)
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-lg-3" style="text-align:right; font-weight:800">
-                    @Html.DisplayNameFor(model => model.Investigation)
-                </div>
-
-                <div class="col-lg-9">
-                    @Html.DisplayFor(model => model.Investigation)
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-lg-3" style="text-align:right; font-weight:800">
-                    @Html.DisplayNameFor(model => model.DevNotes)
-                </div>
-
-                <div class="col-lg-9">
-                    @Html.DisplayFor(model => model.DevNotes)
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-lg-3" style="text-align:right; font-weight:800">
-                    @Html.DisplayNameFor(model => model.Email)
-                </div>
-
-                <div class="col-lg-9">
-                    @Html.DisplayFor(model => model.Email)
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-lg-3" style="text-align:right; font-weight:800">
-                    @Html.DisplayName("File Download")
-                </div>
-
-                <div class="col-lg-9">
-                    @Html.HiddenFor(model => model.FilePath)
-                    @if (!string.IsNullOrEmpty(Model.FilePath))
-                    {@Html.ActionLink("File Download", "Download", "Incidents", new { file = Model.FilePath }, null)}
-                </div>
-            </div>
+            <br />
 
             <div class="panel-footer primary" align="right" style="height:50px;vertical-align:top;">
                 @Html.ActionLink("Edit", "Edit", new { id = Model.INC }) |
