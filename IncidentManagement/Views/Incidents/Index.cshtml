@@ -16,189 +16,192 @@
     <script src="Scripts/jquery-1.10.2.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>*@
 
-<table class="table table-responsive">
-    <tr>
-        @using (Html.BeginForm("Index", "Incidents", FormMethod.Post))
+<div class="col-md-8 col-md-offset-2">
+    <table class="table table-responsive">
+        <tr>
+            @using (Html.BeginForm("Index", "Incidents", FormMethod.Post))
+            {
+                <th style="padding:10px;padding-right:10px;">
+
+                    @Html.DropDownList("ticketprtyId", new List<SelectListItem>()
+                   {
+                 new SelectListItem() { Text = "LOW", Value = "LOW"},
+                 new SelectListItem() { Text = "MEDIUM", Value = "MEDIUM" },
+                 new SelectListItem() { Text = "HIGH", Value = "HIGH" },
+                 new SelectListItem() { Text = "CRITICAL", Value = "CRITICAL" }
+          }, "Ticket Priorities", htmlAttributes: new { @class = "form-control", Styles = "width:200px" })
+                </th>
+                <th style="padding:10px;padding-right:10px;">
+                    @Html.DropDownList("ticketstatusId", new List<SelectListItem>()
         {
-            <th style="padding:10px;padding-right:10px;" width="180px">
+        new SelectListItem { Text = "OPEN", Value = "OPEN" },
+        new SelectListItem { Text = "PENDING", Value = "PENDING" },
+        new SelectListItem { Text = "APPROVED", Value = "APPROVED" },
+        new SelectListItem { Text = "REJECTED", Value = "REJECTED" },
+        new SelectListItem { Text = "CLOSED", Value = "CLOSED" } }, "Ticket Status", htmlAttributes: new { @class = "form-control" })
+                </th>
+                <th style="padding:10px;padding-right:10px;">
+                    @Html.TextBox("incnum", "", htmlAttributes: new { @class = "form-control", placeholder = "Enter INC No" })
+                </th>
+                <th style="padding:10px;padding-right:10px;">
+                    @Html.DropDownList("TestCategoryID", new List<SelectListItem>()
+             {
+                 new SelectListItem {Text="JMS", Value="JMS"},
+                 new SelectListItem {Text="Inventory Control", Value="Inventory Control"},
+                 new SelectListItem {Text="Inventory Control Mobile", Value="Inventory Control Mobile"},
+                 new SelectListItem {Text="Blancco", Value="Blancco"},
+                 new SelectListItem {Text="DOCS Online", Value="DOCS Online"},
+                 new SelectListItem {Text="Payment Portal", Value="Payment Portal"},
+                 new SelectListItem {Text="Remediation", Value="Remediation"},
+                   new SelectListItem {Text="Remediation", Value="TechAssistTickets"},
+                 new SelectListItem {Text="IT-Desktop Support", Value="IT-Desktop Support"}
 
-                @Html.DropDownList("ticketprtyId", new List<SelectListItem>()
-               {
-             new SelectListItem() { Text = "LOW", Value = "LOW"},
-             new SelectListItem() { Text = "MEDIUM", Value = "MEDIUM" },
-             new SelectListItem() { Text = "HIGH", Value = "HIGH" },
-             new SelectListItem() { Text = "CRITICAL", Value = "CRITICAL" }
-      }, "Ticket Priorities", htmlAttributes: new { @class = "form-control", Styles = "width:200px" })
-            </th>
-            <th style="padding:10px;padding-right:10px;" width="200px">
-                @Html.DropDownList("ticketstatusId", new List<SelectListItem>()
-    {
-    new SelectListItem { Text = "OPEN", Value = "OPEN" },
-    new SelectListItem { Text = "PENDING", Value = "PENDING" },
-    new SelectListItem { Text = "APPROVED", Value = "APPROVED" },
-    new SelectListItem { Text = "REJECTED", Value = "REJECTED" },
-    new SelectListItem { Text = "CLOSED", Value = "CLOSED" } }, "Ticket Status", htmlAttributes: new { @class = "form-control" })
-            </th>
-            <th style="padding:10px;padding-right:10px;">
-                @Html.TextBox("incnum", "", htmlAttributes: new { @class = "form-control", placeholder = "Enter INC No" })
-            </th>
-            <th style="padding:10px;padding-right:10px;" width="200px">
-                @Html.DropDownList("TestCategoryID", new List<SelectListItem>()
-         {
-             new SelectListItem {Text="JMS", Value="JMS"},
-             new SelectListItem {Text="Inventory Control", Value="Inventory Control"},
-             new SelectListItem {Text="Inventory Control Mobile", Value="Inventory Control Mobile"},
-             new SelectListItem {Text="Blancco", Value="Blancco"},
-             new SelectListItem {Text="DOCS Online", Value="DOCS Online"},
-             new SelectListItem {Text="Payment Portal", Value="Payment Portal"},
-             new SelectListItem {Text="Remediation", Value="Remediation"},
-               new SelectListItem {Text="Remediation", Value="TechAssistTickets"},
-             new SelectListItem {Text="IT-Desktop Support", Value="IT-Desktop Support"}
+             }, "Applications", htmlAttributes: new { @class = "form-control" })
 
-         }, "Applications", htmlAttributes: new { @class = "form-control" })
+                </th>
 
-            </th>
+                <th style="padding:10px;padding-right:10px;">
+                    @Html.DropDownList("RequestTypeID", new List<SelectListItem>()
+             {
+                 new SelectListItem {Text="Incident Request ", Value="Incident Request "},
+                 new SelectListItem {Text="Development Request", Value="Development Request"}
 
-            <th style="padding:10px;padding-right:10px;" width="200px">
-                @Html.DropDownList("RequestTypeID", new List<SelectListItem>()
-         {
-             new SelectListItem {Text="Incident Request ", Value="Incident Request "},
-             new SelectListItem {Text="Development Request", Value="Development Request"}
+             }, "Request Types", htmlAttributes: new { @class = "form-control" })
 
-         }, "Request Types", htmlAttributes: new { @class = "form-control" })
-
-            </th>
-            <th style="padding:10px;padding-right:10px;">
-                <input type="submit" value="Search" class="btn btn-primary active" name="submitButton" />
-            </th>
-            <th style="padding:10px;padding-right:10px;">
-                <button type="submit" value="ExportToExcel" class="btn btn-default btn-sm" name="submitButton">
-                    <span class="glyphicon glyphicon-export"></span> Export
-                </button>
-            </th>
-        }
-    </tr>
-</table>
-<div class="container" style="margin-left:0px;padding-top:5px">
-    <div class="row" style="width:160%">
-        <div class="col-md-12">
-            <table id="inctable" class="table  table-condensed table-responsive table-hover " style="font-size:smaller; border-top:solid; border:solid;border-width:1px; border-top-width:1px; border-color:#959ca1;">
-
-                <thead style="font-weight:400; background-color:#F79636;color:#ffffff;" id="HeaderTR">
-                    <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.INC)
-                        </th>
-
-                        <th>
-                            @Html.Label("APPLICATION")
-                        </th>
-                        <th>
-                            @Html.Label("DATE")
-
-                        </th>
-                        <th>
-                            @Html.Label("USER")
-
-                        </th>
-                        <th>
-                            @Html.Label("LOCATION")
-                        </th>
-                        <th>
-                            @Html.Label("PRIORITY")
-
-                        </th>
-                        <th>
-                            @Html.Label("DETAILS")
-                        </th>
-                        <th>
-                            @Html.Label("STATUS")
-                        </th>
-                        <th>
-                            @Html.Label("NOTE")
-                        </th>
-                        <th>
-                            @if (UserRole.UserCanEdit())
-                            {
-                                @Html.Label("APPROVAL")
-                            }
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr class="body-content dt-rowReorder-float d-flex">
-                            <td>
-                                <a href="@Url.Action("Details",new { INC = item.INC })">
-
-                                    @Html.DisplayFor(modelItem => item.INC)
-                                </a>
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.TestCategory)
-                            </td>
-
-                            <td>
-                                @if (@item.DateCreated != null)
-                                {
-                                    @item.DateCreated.Value.ToShortDateString()
-                                }
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.UserName)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Location)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Priority)
-                            </td>
-                            <td>
-                                @if (!string.IsNullOrEmpty(item.TestDetails.ToString()) && item.TestDetails.Length > 250)
-                                {
-                                    item.TestDetails = item.TestDetails.Substring(0, 250).ToString();
-
-                                    @Html.DisplayFor(modelItem => item.TestDetails)
-                                }
-                                else
-                                {
-                                    @Html.DisplayFor(modelItem => item.TestDetails)
-                                }
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Status)
-                            </td>
-                            <td>
-                                @if (item.DevNotes != null && item.DevNotes.Length > 250)
-                                {
-                                    item.DevNotes = item.DevNotes.Substring(0, 250).ToString();
-
-                                    @Html.DisplayFor(modelItem => item.DevNotes)
-                                }
-                                else
-                                {
-                                    @Html.DisplayFor(modelItem => item.DevNotes)
-                                }
-                            </td>
-                            <td>
-                                @if (UserRole.UserCanEdit())
-                                {
-                                    <button type="button" class="btn btn-labeled btn-success" onclick="ApprovedRequest(@item.INC)">
-                                        <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span>
-                                    </button>
-                                    <button type="submit" class="btn btn-labeled btn-danger" onclick="RejectedRequest(@item.INC)">
-                                        <span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>
-                                    </button>
-                                }
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-    </div>
+                </th>
+                <th style="padding:10px;padding-right:10px;">
+                    <input type="submit" value="Search" class="btn btn-primary active" name="submitButton" />
+                </th>
+                <th style="padding:10px;padding-right:10px;">
+                    <button type="submit" value="ExportToExcel" class="btn btn-default" name="submitButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-upload" viewBox="0 0 16 16">
+                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                            <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z" />
+                        </svg>
+                        Export
+                    </button>
+                </th>
+            }
+        </tr>
+    </table>
 </div>
+
+<div class="col-md-12">
+    <table id="inctable" class="table  table-condensed table-responsive table-hover table-striped" style="font-size:smaller; border-top:solid; border:solid;border-width:1px; border-top-width:1px; border-color:#959ca1;">
+        <thead style="font-weight:400; background-color:#F27900;color:#ffffff;" id="HeaderTR">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.INC)
+                </th>
+
+                <th>
+                    @Html.Label("APPLICATION")
+                </th>
+                <th>
+                    @Html.Label("DATE")
+
+                </th>
+                <th>
+                    @Html.Label("USER")
+
+                </th>
+                <th>
+                    @Html.Label("LOCATION")
+                </th>
+                <th>
+                    @Html.Label("PRIORITY")
+
+                </th>
+                <th>
+                    @Html.Label("DETAILS")
+                </th>
+                <th>
+                    @Html.Label("STATUS")
+                </th>
+                <th>
+                    @Html.Label("NOTE")
+                </th>
+                <th>
+                    @if (UserRole.UserCanEdit())
+                    {
+                        @Html.Label("APPROVAL")
+                    }
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="body-content dt-rowReorder-float d-flex">
+                    <td>
+                        <a href="@Url.Action("Details",new { INC = item.INC })" style="color:#333">
+
+                            @Html.DisplayFor(modelItem => item.INC)
+                        </a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TestCategory)
+                    </td>
+
+                    <td>
+                        @if (@item.DateCreated != null)
+                        {
+                            @item.DateCreated.Value.ToShortDateString()
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Location)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Priority)
+                    </td>
+                    <td>
+                        @if (!string.IsNullOrEmpty(item.TestDetails.ToString()) && item.TestDetails.Length > 250)
+                        {
+                            item.TestDetails = item.TestDetails.Substring(0, 250).ToString();
+
+                            @Html.DisplayFor(modelItem => item.TestDetails)
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(modelItem => item.TestDetails)
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        @if (item.DevNotes != null && item.DevNotes.Length > 250)
+                        {
+                            item.DevNotes = item.DevNotes.Substring(0, 250).ToString();
+
+                            @Html.DisplayFor(modelItem => item.DevNotes)
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(modelItem => item.DevNotes)
+                        }
+                    </td>
+                    <td>
+                        @if (UserRole.UserCanEdit())
+                        {
+                            <button type="button" class="btn btn-labeled btn-success" onclick="ApprovedRequest(@item.INC)">
+                                <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span>
+                            </button>
+                            <button type="submit" class="btn btn-labeled btn-danger" onclick="RejectedRequest(@item.INC)">
+                                <span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>
+                            </button>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
 <div id='myModal' class='modal'>
     <div class="modal-dialog">
         <div class="modal-content">
@@ -209,6 +212,7 @@
 <div id="spinner" style="display:none;">
     <img src="~/Images/loading.gif" />
 </div>
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <script src="@Url.Content("~/Scripts/jquery-ui-1.12.1.min.js")"></script>
@@ -324,6 +328,10 @@
         opacity: 0;
     }
 
+    a {
+        color: #333;
+    }
+
     .btn.active span.glyphicon {
         opacity: 1;
     }
@@ -350,8 +358,8 @@
 
     .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
         color: #333333;
-        background-color: red;
-        border-color: red;
+        background-color: lightseagreen;
+        border-color: lightseagreen;
     }
 
     /* Set padding to keep content from hitting the edges */
@@ -363,11 +371,6 @@
 
     .dataTables_filter {
         float: right;
-    }
-
-    .container {
-        padding-left: 15px;
-        padding-right: 5px;
     }
 
     .page-item.active .page-link {
