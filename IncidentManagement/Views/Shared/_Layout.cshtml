@@ -41,6 +41,10 @@
                             </svg>
                         </a>
                         <ul class="dropdown-menu">
+                            @if (Session["Administrator"] != null)
+                            {
+                            <li>@Html.ActionLink("Remedy Admin Console", "Index", "TicketRemedy", null, new { style = "padding:8px 8px" })</li>
+                            }
                             <li>@Html.ActionLink("Logout", "Logout", "Login", null, new { style = "padding:8px 8px" })</li>
                         </ul>
                     </li>

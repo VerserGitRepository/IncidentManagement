@@ -223,6 +223,7 @@
     <Compile Include="Controllers\IncidentsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TicketRemedyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -476,7 +477,8 @@
     <Content Include="Images\CompanyLogo.jpg" />
     <Content Include="Images\line_conn.gif" />
     <Content Include="Images\loading.gif" />
-    <Content Include="Images\VerserLogo.png" />
+    <Content Include="Images\Verser.jpg" />
+    <Content Include="Images\Verser_bg3.jpg" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -644,6 +646,7 @@
     <Content Include="Scripts\jquery-1.12.4.min.map" />
     <None Include="Views\Incidents\Index.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\TicketRemedy\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
